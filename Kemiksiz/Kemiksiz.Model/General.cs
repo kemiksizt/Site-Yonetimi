@@ -12,6 +12,6 @@ namespace Kemiksiz.Model
         public T Entity { get; set; }
         public List<T> List { get; set; }
         public string ExceptionMessage { get; set; }
-        public string SuccessfulMessage { get; set; }
+        public string Message { get; set; }
     }
 }

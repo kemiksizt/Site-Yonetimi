@@ -9,6 +9,9 @@ namespace Kemiksiz.DB.Entities.DataContext
 {
     public partial class KemiksizContext : DbContext
     {
+
+       // Scaffold-DbContext "Server=.;Database=Kemiksiz;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -Contextdir Entities/DataContext -Context KemiksizContext -Project Kemiksiz.DB -StartUpProject Kemiksiz.DB -NoPluralize -Force
+
         public KemiksizContext()
         {
         }
@@ -63,9 +66,7 @@ namespace Kemiksiz.DB.Entities.DataContext
                     .IsRequired()
                     .HasMaxLength(10);
 
-                entity.Property(e => e.PlateNo)
-                    .IsRequired()
-                    .HasMaxLength(9);
+                entity.Property(e => e.PlateNo).HasMaxLength(9);
 
                 entity.Property(e => e.Surname)
                     .IsRequired()
@@ -92,8 +93,7 @@ namespace Kemiksiz.DB.Entities.DataContext
             {
                 entity.Property(e => e.ApartmentFloor)
                     .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength(true);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.ApartmentType)
                     .IsRequired()
@@ -162,9 +162,7 @@ namespace Kemiksiz.DB.Entities.DataContext
                     .IsRequired()
                     .HasMaxLength(10);
 
-                entity.Property(e => e.PlateNo)
-                    .IsRequired()
-                    .HasMaxLength(9);
+                entity.Property(e => e.PlateNo).HasMaxLength(9);
 
                 entity.Property(e => e.Surname)
                     .IsRequired()

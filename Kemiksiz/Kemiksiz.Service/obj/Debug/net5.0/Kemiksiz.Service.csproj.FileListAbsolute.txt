@@ -10,3 +10,15 @@ C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\ref\Kemiksiz.Service.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\bin\Debug\net5.0\Kemiksiz.Service.deps.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\bin\Debug\net5.0\Kemiksiz.Service.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\bin\Debug\net5.0\ref\Kemiksiz.Service.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\bin\Debug\net5.0\Kemiksiz.Service.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.csproj.AssemblyReference.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.AssemblyInfoInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.AssemblyInfo.cs
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.csproj.CoreCompileInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\ref\Kemiksiz.Service.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Service\obj\Debug\net5.0\Kemiksiz.Service.pdb

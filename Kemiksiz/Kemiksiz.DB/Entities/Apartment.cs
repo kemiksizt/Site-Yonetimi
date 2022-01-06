@@ -17,7 +17,7 @@ namespace Kemiksiz.DB.Entities
         public string BlockName { get; set; }
         public string ApartmentType { get; set; }
         public int ApartmentNo { get; set; }
-        public string ApartmentFloor { get; set; }
+        public int ApartmentFloor { get; set; }
         public bool IsFull { get; set; }
 
         public virtual ICollection<Admin> Admin { get; set; }

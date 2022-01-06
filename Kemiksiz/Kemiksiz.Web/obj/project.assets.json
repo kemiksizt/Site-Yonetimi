@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.Web\\Kemiksiz.Web.csproj",
+      "projectUniqueName": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Web\\Kemiksiz.Web.csproj",
       "projectName": "Kemiksiz.Web",
-      "projectPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.Web\\Kemiksiz.Web.csproj",
+      "projectPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Web\\Kemiksiz.Web.csproj",
       "packagesPath": "C:\\Users\\Turab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.Web\\obj\\",
+      "outputPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Turab\\AppData\\Roaming\\NuGet\\NuGet.Config",

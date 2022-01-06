@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zBblFX5FNLlVHN+0sQ0N3ffTYXAGuOPoj275S5eQv3CseTibg51sF8mD6ez75JPd4unfVns+FGUJxSKHo6AzrQ==",
+  "dgSpecHash": "7I57vf/6tyUutfPQtD01D8IwLaaFetS+SZaDv5tWC6M1EIWu+BFS7POLjTidGSoHYKXfloeCeHa32fk3DlnOkw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
+  "projectFilePath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Turab\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Turab\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

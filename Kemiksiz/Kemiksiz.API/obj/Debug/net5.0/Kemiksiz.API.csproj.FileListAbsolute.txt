@@ -20,3 +20,25 @@ C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Ke
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\ref\Kemiksiz.API.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.pdb
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.genruntimeconfig.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\appsettings.Development.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\appsettings.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.exe
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.deps.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.runtimeconfig.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.runtimeconfig.dev.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\ref\Kemiksiz.API.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.API.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.csproj.AssemblyReference.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.AssemblyInfoInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.AssemblyInfo.cs
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.csproj.CoreCompileInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\scopedcss\bundle\Kemiksiz.API.styles.css
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\staticwebassets\Kemiksiz.API.StaticWebAssets.Manifest.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.RazorTargetAssemblyInfo.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\ref\Kemiksiz.API.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.genruntimeconfig.cache

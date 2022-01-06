@@ -10,3 +10,15 @@ C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\ref\Kemiksiz.Model.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\bin\Debug\net5.0\Kemiksiz.Model.deps.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\bin\Debug\net5.0\Kemiksiz.Model.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\bin\Debug\net5.0\ref\Kemiksiz.Model.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\bin\Debug\net5.0\Kemiksiz.Model.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.csproj.AssemblyReference.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.AssemblyInfoInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.AssemblyInfo.cs
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.csproj.CoreCompileInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\ref\Kemiksiz.Model.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Model\obj\Debug\net5.0\Kemiksiz.Model.pdb

@@ -5802,11 +5802,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
+      "projectUniqueName": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
       "projectName": "Kemiksiz.DB",
-      "projectPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
+      "projectPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.DB\\Kemiksiz.DB.csproj",
       "packagesPath": "C:\\Users\\Turab\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.DB\\obj\\",
+      "outputPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.DB\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Turab\\AppData\\Roaming\\NuGet\\NuGet.Config",

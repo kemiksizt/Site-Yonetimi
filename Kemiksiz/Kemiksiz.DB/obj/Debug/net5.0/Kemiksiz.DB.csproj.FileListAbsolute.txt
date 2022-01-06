@@ -13,3 +13,18 @@ C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kem
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\ref\Kemiksiz.DB.dll
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.pdb
 C:\Users\Turab\Desktop\Bitirme Projesi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.genruntimeconfig.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.DB.deps.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.DB.runtimeconfig.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.DB.runtimeconfig.dev.json
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.DB.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\ref\Kemiksiz.DB.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.DB.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.csproj.AssemblyReference.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.AssemblyInfoInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.AssemblyInfo.cs
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.csproj.CoreCompileInputs.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\ref\Kemiksiz.DB.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.genruntimeconfig.cache

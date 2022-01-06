@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj": {}
+    "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj": {
+    "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj",
+        "projectUniqueName": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj",
         "projectName": "Kemiksiz.API",
-        "projectPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj",
+        "projectPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.API\\Kemiksiz.API.csproj",
         "packagesPath": "C:\\Users\\Turab\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Turab\\Desktop\\Bitirme Projesi\\Kemiksiz\\Kemiksiz.API\\obj\\",
+        "outputPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Turab\\AppData\\Roaming\\NuGet\\NuGet.Config",

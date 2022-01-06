@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "4ab55139-be9f-45c3-b321-bd69dd60b784": {
+      "ProjectGuid": "4ab55139-be9f-45c3-b321-bd69dd60b784",
+      "DisplayName": "Kemiksiz.API",
+      "ColorIndex": 0
+    },
+    "a38b39b8-2e30-4e29-b2cd-be05645a7066": {
+      "ProjectGuid": "a38b39b8-2e30-4e29-b2cd-be05645a7066",
+      "DisplayName": "Kemiksiz.Service",
+      "ColorIndex": 1
+    },
+    "9ab4afca-3c75-4501-88e4-f9a3d5aae381": {
+      "ProjectGuid": "9ab4afca-3c75-4501-88e4-f9a3d5aae381",
+      "DisplayName": "Kemiksiz.Model",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

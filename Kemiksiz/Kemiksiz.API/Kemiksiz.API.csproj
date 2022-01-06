@@ -5,7 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Kemiksiz.DB\Kemiksiz.DB.csproj" />
+    <ProjectReference Include="..\Kemiksiz.Model\Kemiksiz.Model.csproj" />
+    <ProjectReference Include="..\Kemiksiz.Service\Kemiksiz.Service.csproj" />
   </ItemGroup>
 
 </Project>

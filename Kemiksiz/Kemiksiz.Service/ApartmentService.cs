@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Kemiksiz.Service
 {
-    public class ApartmanetService : IApartmentService
+    public class ApartmentService : IApartmentService
     {
         public General<ApartmanetViewModel> GetApartments()
         {

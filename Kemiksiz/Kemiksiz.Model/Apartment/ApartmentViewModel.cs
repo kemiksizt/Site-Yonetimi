@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Kemiksiz.Model
 {
-    public class ApartmanetViewModel
+    public class ApartmentViewModel
     {
         public int Id { get; set; }
         public string BlockName { get; set; }

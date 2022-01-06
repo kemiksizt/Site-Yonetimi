@@ -9,7 +9,6 @@ namespace Kemiksiz.Service
 {
     public interface IApartmentService
     {
-        public General<ApartmentViewModel> GetFullApartments();
-        public General<ApartmentViewModel> GetEmptyApartments();
+        public General<ApartmentViewModel> GetApartments();
     }
 }

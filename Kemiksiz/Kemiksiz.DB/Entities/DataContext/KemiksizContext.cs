@@ -9,9 +9,6 @@ namespace Kemiksiz.DB.Entities.DataContext
 {
     public partial class KemiksizContext : DbContext
     {
-
-       // Scaffold-DbContext "Server=.;Database=Kemiksiz;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -Contextdir Entities/DataContext -Context KemiksizContext -Project Kemiksiz.DB -StartUpProject Kemiksiz.DB -NoPluralize -Force
-
         public KemiksizContext()
         {
         }
@@ -21,7 +18,6 @@ namespace Kemiksiz.DB.Entities.DataContext
         {
         }
 
-        public virtual DbSet<Admin> Admin { get; set; }
         public virtual DbSet<Apartment> Apartment { get; set; }
         public virtual DbSet<Bill> Bill { get; set; }
         public virtual DbSet<User> User { get; set; }
@@ -39,71 +35,15 @@ namespace Kemiksiz.DB.Entities.DataContext
         {
             modelBuilder.HasAnnotation("Relational:Collation", "Turkish_CI_AS");
 
-            modelBuilder.Entity<Admin>(entity =>
-            {
-                entity.Property(e => e.Email)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.Idate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("IDate")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.Property(e => e.IsActive)
-                    .IsRequired()
-                    .HasDefaultValueSql("((1))");
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.Password)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.Phone)
-                    .IsRequired()
-                    .HasMaxLength(10);
-
-                entity.Property(e => e.PlateNo).HasMaxLength(9);
-
-                entity.Property(e => e.Surname)
-                    .IsRequired()
-                    .HasMaxLength(20);
-
-                entity.Property(e => e.Tc)
-                    .IsRequired()
-                    .HasMaxLength(11)
-                    .HasColumnName("TC");
-
-                entity.Property(e => e.Udate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("UDate")
-                    .HasDefaultValueSql("(getdate())");
-
-                entity.HasOne(d => d.Apartment)
-                    .WithMany(p => p.Admin)
-                    .HasForeignKey(d => d.ApartmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Admin_Apartment");
-            });
-
             modelBuilder.Entity<Apartment>(entity =>
             {
-                entity.Property(e => e.ApartmentFloor)
-                    .IsRequired()
-                    .HasMaxLength(50);
-
                 entity.Property(e => e.ApartmentType)
                     .IsRequired()
                     .HasMaxLength(10);
 
                 entity.Property(e => e.BlockName)
                     .IsRequired()
-                    .HasMaxLength(1)
-                    .IsUnicode(false)
-                    .IsFixedLength(true);
+                    .HasMaxLength(1);
             });
 
             modelBuilder.Entity<Bill>(entity =>
@@ -124,14 +64,16 @@ namespace Kemiksiz.DB.Entities.DataContext
                     .HasColumnName("UDate")
                     .HasDefaultValueSql("(getdate())");
 
-                entity.HasOne(d => d.Admin)
+                entity.HasOne(d => d.Apartment)
                     .WithMany(p => p.Bill)
-                    .HasForeignKey(d => d.AdminId)
-                    .HasConstraintName("FK_Bill_Admin");
+                    .HasForeignKey(d => d.ApartmentId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Bill_Apartment");
 
                 entity.HasOne(d => d.User)
                     .WithMany(p => p.Bill)
                     .HasForeignKey(d => d.UserId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Bill_User");
             });
 

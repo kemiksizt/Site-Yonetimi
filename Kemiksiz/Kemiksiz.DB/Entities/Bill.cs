@@ -14,10 +14,10 @@ namespace Kemiksiz.DB.Entities
         public DateTime? Udate { get; set; }
         public bool IsPaid { get; set; }
         public bool IsDeleted { get; set; }
-        public int? UserId { get; set; }
-        public int? AdminId { get; set; }
+        public int UserId { get; set; }
+        public int ApartmentId { get; set; }
 
-        public virtual Admin Admin { get; set; }
+        public virtual Apartment Apartment { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -16,15 +16,9 @@ namespace Kemiksiz.API.Controllers
         }
 
         [HttpGet]
-        public General<ApartmentViewModel> GetFullApartments()
+        public General<ApartmentViewModel> GetApartments()
         {
-            return apartmentService.GetFullApartments();
-        }
-
-        [HttpGet]
-        public General<ApartmentViewModel> GetEmptyApartments()
-        {
-            return apartmentService.GetEmptyApartments();
+            return apartmentService.GetApartments();
         }
     }
 }

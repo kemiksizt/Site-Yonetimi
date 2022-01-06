@@ -17,25 +17,25 @@ namespace Kemiksiz.Service
         {
             mapper = _mapper;
         }
-        public General<ApartmentViewModel> GetFullApartments()
+        public General<ApartmentViewModel> GetApartments()
         {
             var result = new General<ApartmentViewModel>();
 
             using (var context = new KemiksizContext())
             {
-                var data = context.Apartment.Where(a => a.IsFull).OrderBy(a => a.Id);
+                var data = context.Apartment.OrderBy(a => a.Id);
             
 
                 if(data.Any())
                 {
                     result.List = mapper.Map<List<ApartmentViewModel>>(data);
                     result.IsSuccess = true;
-                    result.Message = "Dolu daire listeleme işlemi başarılı!";
+                    result.Message = "Daire listeleme işlemi başarılı!";
                 }
 
                 else
                 {
-                    result.ExceptionMessage = "Aktif hiçbir daire yok!";
+                    result.ExceptionMessage = "Sistemde hiçbir daire yok!";
                 }
 
             }
@@ -43,31 +43,5 @@ namespace Kemiksiz.Service
             return result;
         }
 
-
-        public General<ApartmentViewModel> GetEmptyApartments()
-        {
-            var result = new General<ApartmentViewModel>();
-
-            using (var context = new KemiksizContext())
-            {
-                var data = context.Apartment.Where(a => !a.IsFull).OrderBy(a => a.Id);
-
-
-                if (data.Any())
-                {
-                    result.List = mapper.Map<List<ApartmentViewModel>>(data);
-                    result.IsSuccess = true;
-                    result.Message = "Boş daire listeleme işlemi başarılı!";
-                }
-
-                else
-                {
-                    result.ExceptionMessage = "Tüm daireler dolu!";
-                }
-
-            }
-
-            return result;
-        }
     }
 }

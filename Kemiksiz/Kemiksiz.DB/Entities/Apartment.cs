@@ -9,7 +9,7 @@ namespace Kemiksiz.DB.Entities
     {
         public Apartment()
         {
-            Admin = new HashSet<Admin>();
+            Bill = new HashSet<Bill>();
             User = new HashSet<User>();
         }
 
@@ -20,7 +20,7 @@ namespace Kemiksiz.DB.Entities
         public int ApartmentFloor { get; set; }
         public bool IsFull { get; set; }
 
-        public virtual ICollection<Admin> Admin { get; set; }
+        public virtual ICollection<Bill> Bill { get; set; }
         public virtual ICollection<User> User { get; set; }
     }
 }

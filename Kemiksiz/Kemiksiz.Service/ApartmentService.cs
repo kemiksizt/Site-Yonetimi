@@ -23,7 +23,7 @@ namespace Kemiksiz.Service
 
             using (var context = new KemiksizContext())
             {
-                var data = context.Apartment.OrderBy(a => a.Id);
+                var data = context.Apartment.OrderBy(a => a.Id).ThenBy(a => a.IsFull);
             
 
                 if(data.Any())

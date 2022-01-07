@@ -71,5 +71,40 @@ namespace Kemiksiz.Service.User
         }
 
 
+        public General<UserViewModel> Update(UserViewModel updatedUser)
+        {
+            var result = new General<UserViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var permission = context.User.Any(x => x.Id == updatedUser.Id);
+                var user = context.User.SingleOrDefault(x => x.Id == updatedUser.Id);
+
+                if (permission)
+                {
+                    user.Name = updatedUser.Name;
+                    user.Surname = updatedUser.Surname;
+                    user.Email = updatedUser.Email;
+                    user.Password = updatedUser.Password;
+                    user.IsAdmin = updatedUser.IsAdmin;
+
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<UserViewModel>(updatedUser);
+                    result.IsSuccess = true;
+                    result.Message = "Kullanıcı güncelleme işlemi başarılı!";
+
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Girilen Id de bir kullanıcı yok, Lütfen kontrol edin!";
+                }
+            }
+
+            return result;
+        }
+
+
     }
 }

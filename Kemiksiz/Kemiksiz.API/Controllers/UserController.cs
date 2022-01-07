@@ -33,5 +33,11 @@ namespace Kemiksiz.API.Controllers
         {
             return userService.Update(updatedUser);
         }
+
+        [HttpPost]
+        public General<InsertUserViewModel> Insert(InsertUserViewModel newUser)
+        {
+            return userService.Insert(newUser);
+        }
     }
 }

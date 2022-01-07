@@ -68,7 +68,7 @@ namespace Kemiksiz.Service
 
                     result.Entity = mapper.Map<InsertApartmentViewModel>(data);
                     result.IsSuccess = true;
-                    result.Message = "Ekleme işlemi başarılı!";
+                    result.Message = "Daire ekleme işlemi başarılı!";
                 }
  
             }

@@ -105,6 +105,38 @@ namespace Kemiksiz.Service.User
             return result;
         }
 
+        public General<InsertUserViewModel> Insert(InsertUserViewModel newUser)
+        {
+            var result = new General<InsertUserViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = mapper.Map<Kemiksiz.DB.Entities.User>(newUser);
+                var isThere = context.User.Where(x => x.Name == newUser.Name &&
+                                                      x.Surname == newUser.Surname &&
+                                                      x.Email == newUser.Email &&
+                                                      x.Password == newUser.Password &&
+                                                      x.IsAdmin == newUser.IsAdmin);
+
+                if (isThere.Any())
+                {
+                    result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir kullanıcı mevcut, lütfen kontrol ediniz!";
+                }
+
+                else
+                {
+                    context.User.Add(data);
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<InsertUserViewModel>(data);
+                    result.IsSuccess = true;
+                    result.Message = "Kullanıcı ekleme işlemi başarılı!";
+                }
+            }
+
+            return result;
+        }
+
 
     }
 }

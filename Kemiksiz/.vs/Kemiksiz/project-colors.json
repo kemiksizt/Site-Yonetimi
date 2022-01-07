@@ -15,7 +15,12 @@
       "ProjectGuid": "9ab4afca-3c75-4501-88e4-f9a3d5aae381",
       "DisplayName": "Kemiksiz.Model",
       "ColorIndex": 2
+    },
+    "6699578c-d4a4-4c04-b1d3-fad94ffa41f6": {
+      "ProjectGuid": "6699578c-d4a4-4c04-b1d3-fad94ffa41f6",
+      "DisplayName": "Kemiksiz.DB",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 3
+  "NextColorIndex": 4
 }

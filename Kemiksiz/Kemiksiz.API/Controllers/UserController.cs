@@ -21,5 +21,11 @@ namespace Kemiksiz.API.Controllers
         {
             return userService.GetUsers();
         }
+
+        [HttpDelete("{id}")]
+        public General<UserViewModel> Delete(int id)
+        {
+            return userService.Delete(id);
+        }
     }
 }

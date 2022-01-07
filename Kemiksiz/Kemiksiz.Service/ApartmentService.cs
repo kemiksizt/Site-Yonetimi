@@ -44,7 +44,7 @@ namespace Kemiksiz.Service
             return result;
         }
 
-        public General<InsertApartmentViewModel> InsertApartment(InsertApartmentViewModel newApart)
+        public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart)
         {
             var result = new General<InsertApartmentViewModel>();  
 
@@ -68,6 +68,7 @@ namespace Kemiksiz.Service
 
                     result.Entity = mapper.Map<InsertApartmentViewModel>(data);
                     result.IsSuccess = true;
+                    result.Message = "Ekleme işlemi başarılı!";
                 }
  
             }

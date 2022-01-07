@@ -22,7 +22,11 @@ namespace Kemiksiz.API.Controllers
             return apartmentService.GetApartments();
         }
 
-        
-        
+        [HttpPost]
+        public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart)
+        {
+            return apartmentService.Insert(newApart);
+        }
+
     }
 }

@@ -12,6 +12,6 @@ namespace Kemiksiz.Service
     {
         public General<ApartmentViewModel> GetApartments();
 
-        public General<InsertApartmentViewModel> Insert(ApartmentViewModel newApart);
+        public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart);
     }
 }

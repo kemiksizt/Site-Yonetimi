@@ -28,5 +28,11 @@ namespace Kemiksiz.API.Controllers
             return apartmentService.Insert(newApart);
         }
 
+        [HttpDelete("{id}")]
+        public General<ApartmentViewModel> Delete(int id)
+        {
+            return apartmentService.Delete(id);
+        }
+
     }
 }

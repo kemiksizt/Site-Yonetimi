@@ -43,6 +43,33 @@ namespace Kemiksiz.Service.User
             return result;
         }
 
+        public General<UserViewModel> Delete(int id)
+        {
+            var result = new General<UserViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = context.User.SingleOrDefault(i => i.Id == id);
+
+                if (data is not null)
+                {
+                    context.User.Remove(data);
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<UserViewModel>(data);
+                    result.Message = "Kullanıcı silme işlemi başarılı!";
+                    result.IsSuccess = true;
+                }
+                else
+                {
+                    result.ExceptionMessage = "Aranan kullanıcı bulunamadı!";
+                }
+
+            }
+
+            return result;
+        }
+
 
     }
 }

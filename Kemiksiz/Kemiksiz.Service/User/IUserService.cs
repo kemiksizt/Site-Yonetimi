@@ -11,5 +11,6 @@ namespace Kemiksiz.Service.User
     public interface IUserService
     {
         public General<UserViewModel> GetUsers();
+        public General<UserViewModel> Delete(int id);
     }
 }

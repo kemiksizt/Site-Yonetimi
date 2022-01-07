@@ -27,5 +27,11 @@ namespace Kemiksiz.API.Controllers
         {
             return userService.Delete(id);
         }
+
+        [HttpPut]
+        public General<UserViewModel> Update(UserViewModel updatedUser)
+        {
+            return userService.Update(updatedUser);
+        }
     }
 }

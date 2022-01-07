@@ -34,5 +34,10 @@ namespace Kemiksiz.API.Controllers
             return apartmentService.Delete(id);
         }
 
+        [HttpPut]
+        public General<ApartmentViewModel> Update(ApartmentViewModel updatedApart)
+        {
+            return apartmentService.Update(updatedApart);
+        }
     }
 }

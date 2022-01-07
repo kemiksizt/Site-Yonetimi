@@ -76,5 +76,33 @@ namespace Kemiksiz.Service
             return result;
         }
 
+        public General<ApartmentViewModel> Delete(int id)
+        {
+            var result = new General<ApartmentViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = context.Apartment.SingleOrDefault(x => x.Id == id);
+
+                if(data is not null)
+                {
+                    context.Apartment.Remove(data);
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<ApartmentViewModel>(data);
+                    result.IsSuccess = true;
+                    result.Message = "Daire silme işlemi başarılı!";
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Aranan daire bulunamadı!";
+                }
+
+            }
+
+            return result;
+        }
+
     }
 }

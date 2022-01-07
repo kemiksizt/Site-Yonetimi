@@ -51,12 +51,12 @@ namespace Kemiksiz.Service
             using (var context = new KemiksizContext())
             {
                 var data = mapper.Map<Kemiksiz.DB.Entities.Apartment>(newApart);
-                var IsThere = context.Apartment.Where(x => x.BlockName == newApart.BlockName &&
+                var isThere = context.Apartment.Where(x => x.BlockName == newApart.BlockName &&
                                                            x.ApartmentType == newApart.ApartmentType &&
                                                            x.ApartmentNo == newApart.ApartmentNo &&
                                                            x.ApartmentFloor == newApart.ApartmentFloor);
 
-                if (IsThere.Any())
+                if (isThere.Any())
                 {
                     result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir daire mevcut, lütfen kontrol ediniz!";
                 }
@@ -104,5 +104,40 @@ namespace Kemiksiz.Service
             return result;
         }
 
+
+        public General<ApartmentViewModel> Update(ApartmentViewModel updatedApart)
+        {
+            var result = new General<ApartmentViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var permission = context.Apartment.Any(x => x.Id == updatedApart.Id);
+                var apart = context.Apartment.SingleOrDefault(x => x.Id == updatedApart.Id);
+
+                if (permission)
+                {
+                    apart.BlockName = updatedApart.BlockName;
+                    apart.ApartmentType = updatedApart.ApartmentType;
+                    apart.ApartmentNo = updatedApart.ApartmentNo;
+                    apart.ApartmentFloor = updatedApart.ApartmentFloor;
+                    apart.IsFull = updatedApart.IsFull;
+
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<ApartmentViewModel>(updatedApart);
+                    result.IsSuccess = true;
+                    result.Message = "Daire güncelleme işlemi başarılı!";
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Belirtilen Id de daire yok. Lütfen kontrol ediniz!";
+                }
+
+                return result;
+
+            }
+
+        }
     }
 }

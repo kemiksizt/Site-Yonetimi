@@ -1,4 +1,5 @@
 ﻿using Kemiksiz.Model;
+using Kemiksiz.Model.Apartment;
 using Kemiksiz.Service;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,5 +21,8 @@ namespace Kemiksiz.API.Controllers
         {
             return apartmentService.GetApartments();
         }
+
+        
+        
     }
 }

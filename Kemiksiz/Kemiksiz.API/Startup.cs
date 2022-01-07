@@ -1,6 +1,7 @@
 using AutoMapper;
 using Kemiksiz.API.Infrastructure;
 using Kemiksiz.Service;
+using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -34,6 +35,7 @@ namespace Kemiksiz.API
             services.AddSingleton(mapper);
 
             services.AddTransient<IApartmentService, ApartmentService>();
+            services.AddTransient<IUserService, UserService>();
 
 
             services.AddControllers();

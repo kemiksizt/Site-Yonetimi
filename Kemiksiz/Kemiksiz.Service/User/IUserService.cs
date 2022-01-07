@@ -10,6 +10,6 @@ namespace Kemiksiz.Service.User
 {
     public interface IUserService
     {
-        General<UserViewModel> GetUsers();
+        public General<UserViewModel> GetUsers();
     }
 }

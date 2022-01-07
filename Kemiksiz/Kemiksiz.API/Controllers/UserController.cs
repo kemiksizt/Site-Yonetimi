@@ -1,4 +1,6 @@
-﻿using Kemiksiz.Service.User;
+﻿using Kemiksiz.Model;
+using Kemiksiz.Model.User;
+using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,11 +10,16 @@ namespace Kemiksiz.API.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _userService;
-
-        public UserController(IUserService userService)
+        private readonly IUserService userService;
+        public UserController(IUserService _userService)
         {
             userService = _userService;
+        }
+
+        [HttpGet]
+        public General<UserViewModel> GetUsers()
+        {
+            return userService.GetUsers();
         }
     }
 }

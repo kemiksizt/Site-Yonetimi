@@ -2,6 +2,7 @@
 using Kemiksiz.DB.Entities;
 using Kemiksiz.Model;
 using Kemiksiz.Model.Apartment;
+using Kemiksiz.Model.User;
 
 namespace Kemiksiz.API.Infrastructure
 {
@@ -15,6 +16,9 @@ namespace Kemiksiz.API.Infrastructure
 
             CreateMap<InsertApartmentViewModel, Apartment>();
             CreateMap<Apartment, InsertApartmentViewModel>();
+
+            CreateMap<UserViewModel, User>();
+            CreateMap<User, UserViewModel>();
         }
     }
 }

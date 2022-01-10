@@ -119,5 +119,32 @@ namespace Kemiksiz.Service.Bill
 
             return result;
         }
+
+        public General<BillViewModel> Delete(int id)
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = context.Bill.SingleOrDefault(i => i.Id == id);
+
+                if (data is not null)
+                {
+                    context.Bill.Remove(data);
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<BillViewModel>(data);
+                    result.Message = "Fatura silme işlemi başarılı!";
+                    result.IsSuccess = true;
+                }
+                else
+                {
+                    result.ExceptionMessage = "Aranan fatura bulunamadı!";
+                }
+
+            }
+
+            return result;
+        }
     }
 }

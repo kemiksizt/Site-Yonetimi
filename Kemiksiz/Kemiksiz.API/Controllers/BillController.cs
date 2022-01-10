@@ -34,5 +34,11 @@ namespace Kemiksiz.API.Controllers
         {
             return billService.Update(updatedBill);
         }
+
+        [HttpDelete("{id}")]
+        public General<BillViewModel> Delete(int id)
+        {
+            return billService.Delete(id);
+        }
     }
 }

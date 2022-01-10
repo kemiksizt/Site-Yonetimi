@@ -55,7 +55,7 @@ namespace Kemiksiz.Service.Bill
 
                 try
                 {
-                    var data = mapper.Map<Kemiksiz.DB.Entities.Apartment>(newBill);
+                    var data = mapper.Map<Kemiksiz.DB.Entities.Bill>(newBill);
                     var isThere = context.Bill.Where(x => x.ApartmentId == newBill.ApartmentId &&
                                                           x.UserId == newBill.UserId &&
                                                           x.BillType == newBill.BillType);
@@ -67,7 +67,7 @@ namespace Kemiksiz.Service.Bill
 
                     else
                     {
-                        context.Apartment.Add(data);
+                        context.Bill.Add(data);
                         context.SaveChanges();
 
                         result.Entity = mapper.Map<InsertBillViewModel>(data);

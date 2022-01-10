@@ -22,5 +22,11 @@ namespace Kemiksiz.API.Controllers
         {
             return billService.GetBills();
         }
+
+        [HttpPost]
+        public General<InsertBillViewModel> Insert(InsertBillViewModel newBill)
+        {
+            return billService.Insert(newBill);
+        }
     }
 }

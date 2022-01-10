@@ -12,5 +12,6 @@ namespace Kemiksiz.Service.Bill
     {
         public General<BillViewModel> GetBills();
         public General<InsertBillViewModel> Insert(InsertBillViewModel newBill);
+        public General<UpdateBillViewModel> Update(UpdateBillViewModel updatedBill);
     }
 }

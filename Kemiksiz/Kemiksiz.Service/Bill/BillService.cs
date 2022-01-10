@@ -86,5 +86,38 @@ namespace Kemiksiz.Service.Bill
 
             return result;
         }
+
+        public General<UpdateBillViewModel> Update(UpdateBillViewModel updatedBill)
+        {
+            var result = new General<UpdateBillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var permission = context.Bill.Any(x => x.Id == updatedBill.Id);
+                var bill = context.Bill.SingleOrDefault(x => x.Id == updatedBill.Id);
+
+                if (permission)
+                {
+                    bill.BillType = updatedBill.BillType;
+                    bill.Price = updatedBill.Price;
+                    bill.IsPaid = updatedBill.IsPaid;
+                    
+
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<UpdateBillViewModel>(updatedBill);
+                    result.IsSuccess = true;
+                    result.Message = "Fatura güncelleme işlemi başarılı!";
+
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Girilen Id de bir fatura yok, Lütfen kontrol edin!";
+                }
+            }
+
+            return result;
+        }
     }
 }

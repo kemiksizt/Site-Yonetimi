@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Kemiksiz.Model.Bill
 {
-    public class BillViewModel
+    public class UpdateBillViewModel
     {
         public int Id { get; set; }
         public string BillType { get; set; }
         public decimal Price { get; set; }
-        public int UserId { get; set; }
-        public int ApartmentId { get; set; }
         public bool IsPaid { get; set; }
     }
 }

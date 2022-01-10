@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Kemiksiz.Model;
+using Kemiksiz.Model.Bill;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace Kemiksiz.Service.Bill
 {
     public interface IBillService
     {
+        public General<BillViewModel> GetBills();
     }
 }

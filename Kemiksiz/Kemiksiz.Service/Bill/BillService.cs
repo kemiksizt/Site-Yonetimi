@@ -45,5 +45,46 @@ namespace Kemiksiz.Service.Bill
 
             return result;
         }
+
+        public General<InsertBillViewModel> Insert(InsertBillViewModel newBill)
+        {
+            var result = new General<InsertBillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+
+                try
+                {
+                    var data = mapper.Map<Kemiksiz.DB.Entities.Apartment>(newBill);
+                    var isThere = context.Bill.Where(x => x.ApartmentId == newBill.ApartmentId &&
+                                                          x.UserId == newBill.UserId &&
+                                                          x.BillType == newBill.BillType);
+
+                    if (isThere.Any())
+                    {
+                        result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir fatura mevcut, lütfen kontrol ediniz!";
+                    }
+
+                    else
+                    {
+                        context.Apartment.Add(data);
+                        context.SaveChanges();
+
+                        result.Entity = mapper.Map<InsertBillViewModel>(data);
+                        result.IsSuccess = true;
+                        result.Message = "Fatura ekleme işlemi başarılı!";
+                    }
+                }
+                catch (Exception)
+                {
+
+                    result.ExceptionMessage = "Beklenmeyen bir hata oluştu, lütfen daire ve user Id lerini kontrol edin!";
+                }
+                
+
+            }
+
+            return result;
+        }
     }
 }

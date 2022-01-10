@@ -109,29 +109,37 @@ namespace Kemiksiz.Service.User
         {
             var result = new General<InsertUserViewModel>();
 
+
             using (var context = new KemiksizContext())
             {
-                var data = mapper.Map<Kemiksiz.DB.Entities.User>(newUser);
-                var isThere = context.User.Where(x => x.Name == newUser.Name &&
-                                                      x.Surname == newUser.Surname &&
-                                                      x.Email == newUser.Email &&
-                                                      x.Password == newUser.Password &&
-                                                      x.IsAdmin == newUser.IsAdmin);
 
-                if (isThere.Any())
+                try
                 {
-                    result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir kullanıcı mevcut, lütfen kontrol ediniz!";
-                }
+                    var data = mapper.Map<Kemiksiz.DB.Entities.User>(newUser);
+                    var isThere = context.User.Where(x => x.ApartmentId == newUser.ApartmentId);
 
-                else
+                    if (isThere.Any())
+                    {
+                        result.ExceptionMessage = "Girdiğiniz bilgilerdeki daire zaten dolu, lütfen kontrol ediniz!";
+                    }
+
+                    else
+                    {
+                        data.Idate = DateTime.Now;
+                        context.User.Add(data);
+                        context.SaveChanges();
+
+                        result.Entity = mapper.Map<InsertUserViewModel>(data);
+                        result.IsSuccess = true;
+                        result.Message = "Kullanıcı ekleme işlemi başarılı!";
+                    }
+                }
+                catch (Exception)
                 {
-                    context.User.Add(data);
-                    context.SaveChanges();
 
-                    result.Entity = mapper.Map<InsertUserViewModel>(data);
-                    result.IsSuccess = true;
-                    result.Message = "Kullanıcı ekleme işlemi başarılı!";
+                    result.ExceptionMessage = "Beklenmeyen bir hata oluştu, lütfen daire Id sini kontrol edin!";
                 }
+               
             }
 
             return result;

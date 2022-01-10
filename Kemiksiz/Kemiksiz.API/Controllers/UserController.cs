@@ -39,5 +39,7 @@ namespace Kemiksiz.API.Controllers
         {
             return userService.Insert(newUser);
         }
+
+
     }
 }

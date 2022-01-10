@@ -145,6 +145,32 @@ namespace Kemiksiz.Service.User
             return result;
         }
 
+        public General<UserViewModel> Login(LoginViewModel loginUser)
+        {
+            General<UserViewModel> result = new();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete &&
+                                                x.Name == loginUser.Name &&
+                                                x.Password == loginUser.Password);
+                if (data is not null)
+                {
+                    loginUser.IsAdmin = data.IsAdmin;
+                    result.IsSuccess = true;
+                    result.Entity = mapper.Map<UserViewModel>(data);
+                    result.Message = "Giriş işlemi başarılı!";
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Kullanıcı adı veya şifre yanlış, tekrar deneyin!";
+                }
+            }
+
+            return result;
+        }
+
 
     }
 }

@@ -40,6 +40,12 @@ namespace Kemiksiz.API.Controllers
             return userService.Insert(newUser);
         }
 
+        [HttpGet("{id}")]
+        public General<UserViewModel> GetById(int id)
+        {
+            return userService.GetById(id);
+        }
+
 
     }
 }

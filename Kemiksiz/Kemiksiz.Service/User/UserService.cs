@@ -198,6 +198,31 @@ namespace Kemiksiz.Service.User
             return result;
         }
 
+        public General<UserViewModel> GetById(int id)
+        {
+            var result = new General<UserViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+
+                var data = context.User.SingleOrDefault(x => x.Id == id && x.IsActive && !x.IsDelete);
+
+                
+                if (data is not null)
+                {
+                    result.Entity = mapper.Map<UserViewModel>(data);
+                    result.IsSuccess = true;
+                    result.Message = "Kullanıcı getirme işlemi başarılı!";
+                }
+                else
+                {
+                    result.ExceptionMessage = "Herhangi bir kullanıcı bulunamadı.";
+                }
+            }
+
+            return result;
+        }
+
 
     }
 }

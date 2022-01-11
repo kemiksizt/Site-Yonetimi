@@ -15,5 +15,6 @@ namespace Kemiksiz.Service.User
         public General<UserViewModel> Update(UserViewModel updatedUser);
         public General<InsertUserViewModel> Insert(InsertUserViewModel newUser);
         public General<UserViewModel> Login(LoginViewModel loginUser);
+        public General<UserViewModel> GetById(int id);
     }
 }

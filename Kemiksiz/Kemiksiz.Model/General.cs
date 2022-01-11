@@ -13,5 +13,6 @@ namespace Kemiksiz.Model
         public List<T> List { get; set; }
         public string ExceptionMessage { get; set; }
         public string Message { get; set; }
+        public string Token { get; set; }
     }
 }

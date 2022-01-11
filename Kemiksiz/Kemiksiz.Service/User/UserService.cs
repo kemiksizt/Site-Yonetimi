@@ -2,6 +2,7 @@
 using Kemiksiz.DB.Entities.DataContext;
 using Kemiksiz.Model;
 using Kemiksiz.Model.User;
+using Kemiksiz.Service.Jwt;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,12 @@ namespace Kemiksiz.Service.User
     public class UserService : IUserService
     {
         private readonly IMapper mapper;
+        private readonly IJwtService jwtService;
 
-        public UserService(IMapper _mapper)
+        public UserService(IMapper _mapper, IJwtService _jwtService)
         {
             mapper = _mapper;
+            jwtService = _jwtService;
         }
 
         string CreatePassword(int length)
@@ -164,21 +167,32 @@ namespace Kemiksiz.Service.User
 
             using (var context = new KemiksizContext())
             {
-                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete &&
+                try
+                {
+                    var data = context.User.First(x => x.IsActive && !x.IsDelete &&
                                                 x.Name == loginUser.Name &&
                                                 x.Password == loginUser.Password);
-                if (data is not null)
-                {
-                    loginUser.IsAdmin = data.IsAdmin;
-                    result.IsSuccess = true;
-                    result.Entity = mapper.Map<UserViewModel>(data);
-                    result.Message = "Giriş işlemi başarılı!";
+
+                    data.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);
+
+                    if (data is not null && BCrypt.Net.BCrypt.Verify(loginUser.Password, data.Password))
+                    {
+                        loginUser.IsAdmin = data.IsAdmin;
+                        var jwt = jwtService.Generate(data.Id);
+
+                        result.Token = jwt;
+                        result.IsSuccess = true;
+                        result.Entity = mapper.Map<UserViewModel>(data);
+                        result.Message = "Giriş işlemi başarılı!";
+                    }
                 }
 
-                else
+                catch (Exception)
                 {
+
                     result.ExceptionMessage = "Kullanıcı adı veya şifre yanlış, tekrar deneyin!";
                 }
+
             }
 
             return result;

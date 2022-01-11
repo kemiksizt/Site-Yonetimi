@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "3/j5/CHNB1YxNfX065Vwq2TFsy70xFTb8TjVonTlYYbQ1xO6jUBwCBsH3EvkvK87f7ghn8oNI2z0Dxdrs8EUsg==",
+  "dgSpecHash": "3X2sHuwRzrj8sUTi44iY1X7UuO6lB2RFUC4oypEGafxn4Uas1nrirmmmWvGbbk/SL5H9kDPXYcJWZyzpUHWfWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Web\\Kemiksiz.Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Turab\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\Turab\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
     "C:\\Users\\Turab\\.nuget\\packages\\bcrypt.net-next\\4.0.2\\bcrypt.net-next.4.0.2.nupkg.sha512",
     "C:\\Users\\Turab\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.13\\microsoft.aspnetcore.http.features.5.0.13.nupkg.sha512",
     "C:\\Users\\Turab\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

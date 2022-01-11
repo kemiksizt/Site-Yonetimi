@@ -2,6 +2,7 @@ using AutoMapper;
 using Kemiksiz.API.Infrastructure;
 using Kemiksiz.Service;
 using Kemiksiz.Service.Bill;
+using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,6 +39,7 @@ namespace Kemiksiz.API
             services.AddTransient<IApartmentService, ApartmentService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IBillService, BillService>();
+            services.AddTransient<IJwtService, JwtService>();
 
 
             services.AddControllers();

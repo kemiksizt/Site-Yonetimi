@@ -86,3 +86,7 @@ C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.AP
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Kemiksiz.Service.pdb
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\obj\Debug\net5.0\Kemiksiz.API.csproj.CopyComplete
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\BCrypt.Net-Next.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.API\bin\Debug\net5.0\System.IO.Pipelines.dll

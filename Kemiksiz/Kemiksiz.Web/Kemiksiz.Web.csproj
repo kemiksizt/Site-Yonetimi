@@ -5,11 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\Kemiksiz.API\Kemiksiz.API.csproj" />
+    <ProjectReference Include="..\Kemiksiz.DB\Kemiksiz.DB.csproj" />
+    <ProjectReference Include="..\Kemiksiz.Model\Kemiksiz.Model.csproj" />
+    <ProjectReference Include="..\Kemiksiz.Service\Kemiksiz.Service.csproj" />
   </ItemGroup>
 
 </Project>

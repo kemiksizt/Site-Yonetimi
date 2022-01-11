@@ -35,5 +35,15 @@ namespace Kemiksiz.Web.Controllers
             });
         }
 
+        [HttpGet("user")]
+        public IActionResult User()
+        {
+            var jwt = Request.Cookies["jwt"];
+
+            var token = jwtService.Verify(jwt);
+
+            int userId = int.Parse(token.Issuer);
+        }
+
     }
 }

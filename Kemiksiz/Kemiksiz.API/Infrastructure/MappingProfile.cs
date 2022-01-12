@@ -29,6 +29,9 @@ namespace Kemiksiz.API.Infrastructure
             CreateMap<User, LoginViewModel>();
             CreateMap<LoginViewModel, User>();
 
+            CreateMap<User, LoginViewModelPasswordProtected>();
+            CreateMap<LoginViewModelPasswordProtected, User>();
+
             //Bill
             CreateMap<BillViewModel, Bill>();
             CreateMap<Bill, BillViewModel>();

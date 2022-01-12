@@ -189,9 +189,9 @@ namespace Kemiksiz.Service.User
             }
         }
 
-        public General<LoginViewModel> GetById(int id)
+        public General<LoginViewModelPasswordProtected> GetById(int id)
         {
-            var result = new General<LoginViewModel>();
+            var result = new General<LoginViewModelPasswordProtected>();
 
             using (var context = new KemiksizContext())
             {
@@ -201,7 +201,7 @@ namespace Kemiksiz.Service.User
 
                 if (data is not null)
                 {
-                    result.Entity = mapper.Map<LoginViewModel>(data);
+                    result.Entity = mapper.Map<LoginViewModelPasswordProtected>(data);
                     result.IsSuccess = true;
                     result.Message = "Kullanıcı getirme işlemi başarılı!";
                 }

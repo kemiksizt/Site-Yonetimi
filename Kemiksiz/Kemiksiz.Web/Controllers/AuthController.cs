@@ -23,9 +23,20 @@ namespace Kemiksiz.Web.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginViewModel loginUser)
         {
-            var user = userService.Login(loginUser);
+            var user = userService.GetByName(loginUser);
 
-            Response.Cookies.Append("jwt", user.Token, new CookieOptions
+            user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);
+
+            if (user == null) return BadRequest(new { message = "Invalid Credentials" });
+
+            if (!BCrypt.Net.BCrypt.Verify(loginUser.Password, user.Entity.Password))
+            {
+                return BadRequest(new { message = "Invalid Credentials" });
+            }
+
+            var jwt = jwtService.Generate(user.Entity.Id);
+
+            Response.Cookies.Append("jwt", jwt, new CookieOptions
             {
                 HttpOnly = true
             });
@@ -34,6 +45,8 @@ namespace Kemiksiz.Web.Controllers
             {
                 message = "success"
             });
+
+
         }
 
         [HttpGet("user")]
@@ -50,6 +63,8 @@ namespace Kemiksiz.Web.Controllers
 
                 var user = userService.GetById(userId);
 
+                user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(user.Entity.Password);
+
                 return Ok(user);
             }
             catch (Exception e)
@@ -58,7 +73,7 @@ namespace Kemiksiz.Web.Controllers
                 return Unauthorized();
             }
 
-            
+
         }
 
     }

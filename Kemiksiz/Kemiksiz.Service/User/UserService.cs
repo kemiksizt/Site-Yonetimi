@@ -161,56 +161,47 @@ namespace Kemiksiz.Service.User
             return result;
         }
 
-        public General<UserViewModel> Login(LoginViewModel loginUser)
+        public General<LoginViewModel> Login(LoginViewModel loginUser)
         {
-            General<UserViewModel> result = new();
+            General<LoginViewModel> result = new();
 
             using (var context = new KemiksizContext())
             {
-                try
+                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete &&
+                                            x.Name == loginUser.Name &&
+                                            x.Password == loginUser.Password);
+
+                if (data is not null)
                 {
-                    var data = context.User.First(x => x.IsActive && !x.IsDelete &&
-                                                x.Name == loginUser.Name &&
-                                                x.Password == loginUser.Password);
+                    loginUser.IsAdmin = data.IsAdmin;
 
-                    data.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);
-
-                    if (data is not null && BCrypt.Net.BCrypt.Verify(loginUser.Password, data.Password))
-                    {
-                        loginUser.IsAdmin = data.IsAdmin;
-                        var jwt = jwtService.Generate(data.Id);
-
-                        result.Token = jwt;
-                        result.IsSuccess = true;
-                        result.Entity = mapper.Map<UserViewModel>(data);
-                        result.Message = "Giriş işlemi başarılı!";
-                    }
+                    result.IsSuccess = true;
+                    result.Entity = mapper.Map<LoginViewModel>(data);
+                    result.Message = "Giriş işlemi başarılı!";
                 }
 
-                catch (Exception)
+                else
                 {
-
                     result.ExceptionMessage = "Kullanıcı adı veya şifre yanlış, tekrar deneyin!";
                 }
 
+                return result;
             }
-
-            return result;
         }
 
-        public General<UserViewModel> GetById(int id)
+        public General<LoginViewModel> GetById(int id)
         {
-            var result = new General<UserViewModel>();
+            var result = new General<LoginViewModel>();
 
             using (var context = new KemiksizContext())
             {
 
                 var data = context.User.SingleOrDefault(x => x.Id == id && x.IsActive && !x.IsDelete);
 
-                
+
                 if (data is not null)
                 {
-                    result.Entity = mapper.Map<UserViewModel>(data);
+                    result.Entity = mapper.Map<LoginViewModel>(data);
                     result.IsSuccess = true;
                     result.Message = "Kullanıcı getirme işlemi başarılı!";
                 }
@@ -221,6 +212,36 @@ namespace Kemiksiz.Service.User
             }
 
             return result;
+        }
+
+
+        public General<LoginViewModel> GetByName(LoginViewModel loginUser)
+        {
+            General<LoginViewModel> result = new();
+
+            using (var context = new KemiksizContext())
+            {
+                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete && x.Name == loginUser.Name);
+
+                if (data is not null)
+                {
+                    loginUser.IsAdmin = data.IsAdmin;
+                    loginUser.Password = data.Password;
+
+                    result.IsSuccess = true;
+                    result.Entity = mapper.Map<LoginViewModel>(data);
+                    result.Message = "kullanıcı getirme işlemi başarılı!";
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Kullanıcı adı yanlış, lütfen tekrar deneyin!";
+                }
+
+                return result;
+            }
+
+
         }
 
 

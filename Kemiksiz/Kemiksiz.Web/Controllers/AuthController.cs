@@ -3,10 +3,11 @@ using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Kemiksiz.Web.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("")]
     [ApiController]
     public class AuthController : ControllerBase
     {
@@ -38,11 +39,26 @@ namespace Kemiksiz.Web.Controllers
         [HttpGet("user")]
         public IActionResult User()
         {
-            var jwt = Request.Cookies["jwt"];
 
-            var token = jwtService.Verify(jwt);
+            try
+            {
+                var jwt = Request.Cookies["jwt"];
 
-            int userId = int.Parse(token.Issuer);
+                var token = jwtService.Verify(jwt);
+
+                int userId = int.Parse(token.Issuer);
+
+                var user = userService.GetById(userId);
+
+                return Ok(user);
+            }
+            catch (Exception e)
+            {
+
+                return Unauthorized();
+            }
+
+            
         }
 
     }

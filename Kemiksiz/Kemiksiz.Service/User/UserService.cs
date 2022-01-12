@@ -221,7 +221,8 @@ namespace Kemiksiz.Service.User
 
             using (var context = new KemiksizContext())
             {
-                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete && x.Name == loginUser.Name);
+                var data = context.User.FirstOrDefault(x => x.IsActive && !x.IsDelete && x.Name == loginUser.Name
+                && x.Password == loginUser.Password);
 
                 if (data is not null)
                 {
@@ -242,6 +243,36 @@ namespace Kemiksiz.Service.User
             }
 
 
+        }
+
+        public General<LoginViewModel> GetPassword(LoginViewModel userPass)
+        {
+            var result = new General<LoginViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var permission = context.User.Any(x => x.Name == userPass.Name);
+                var user = context.User.SingleOrDefault(x => x.Name == userPass.Name);
+
+                if (permission)
+                {
+                    user.Password = userPass.Password;
+
+                    context.SaveChanges();
+
+                    result.Entity = mapper.Map<LoginViewModel>(user);
+                    result.IsSuccess = true;
+                    result.Message = "Şifre güncelleme işlemi başarılı!";
+
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Girilen isimde  bir kullanıcı yok, Lütfen kontrol edin!";
+                }
+            }
+
+            return result;
         }
 
 

@@ -1,4 +1,5 @@
-﻿using Kemiksiz.Model.User;
+﻿using Kemiksiz.Model;
+using Kemiksiz.Model.User;
 using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Http;
@@ -20,32 +21,54 @@ namespace Kemiksiz.Web.Controllers
             jwtService = _jwtService;
         }
 
+        [HttpPost("register")]
+        public IActionResult Register(LoginViewModel registerUser)
+        {
+            var user = userService.GetPassword(registerUser);
+
+            if (user.IsSuccess)
+            {
+                return Ok("success");
+            }
+
+            return Unauthorized();
+
+
+            
+        }
+
         [HttpPost("login")]
         public IActionResult Login(LoginViewModel loginUser)
         {
             var user = userService.GetByName(loginUser);
+            if(user.IsSuccess)
+            { 
+                user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);
 
-            user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);
+                if (user == null) return BadRequest(new { message = "Invalid Credentials" });
 
-            if (user == null) return BadRequest(new { message = "Invalid Credentials" });
+                if (!BCrypt.Net.BCrypt.Verify(loginUser.Password, user.Entity.Password))
+                {
+                    return BadRequest(new { message = "Invalid Credentials" });
+                }
 
-            if (!BCrypt.Net.BCrypt.Verify(loginUser.Password, user.Entity.Password))
+                var jwt = jwtService.Generate(user.Entity.Id);
+
+                Response.Cookies.Append("jwt", jwt, new CookieOptions
+                {
+                    HttpOnly = true
+                });
+
+                return Ok(new
+                {
+                    message = "success"
+                });
+            }
+
+            else
             {
                 return BadRequest(new { message = "Invalid Credentials" });
             }
-
-            var jwt = jwtService.Generate(user.Entity.Id);
-
-            Response.Cookies.Append("jwt", jwt, new CookieOptions
-            {
-                HttpOnly = true
-            });
-
-            return Ok(new
-            {
-                message = "success"
-            });
-
 
         }
 

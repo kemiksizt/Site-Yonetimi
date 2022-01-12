@@ -17,5 +17,6 @@ namespace Kemiksiz.Service.User
         public General<LoginViewModel> Login(LoginViewModel loginUser);
         public General<LoginViewModelPasswordProtected> GetById(int id);
         public General<LoginViewModel> GetByName(LoginViewModel loginUser);
+        public General<LoginViewModel> GetPassword(LoginViewModel userPass);
     }
 }

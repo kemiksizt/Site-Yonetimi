@@ -41,7 +41,7 @@ namespace Kemiksiz.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public General<UserViewModel> GetById(int id)
+        public General<LoginViewModel> GetById(int id)
         {
             return userService.GetById(id);
         }

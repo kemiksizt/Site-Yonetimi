@@ -18,7 +18,7 @@ namespace Kemiksiz.API.Controllers
         }
 
         [HttpPost]
-        public General<UserViewModel> Insert(LoginViewModel loginUser)
+        public General<LoginViewModel> Insert(LoginViewModel loginUser)
         {
             return userService.Login(loginUser);
         }

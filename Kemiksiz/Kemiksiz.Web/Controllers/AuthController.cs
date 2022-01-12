@@ -40,7 +40,7 @@ namespace Kemiksiz.Web.Controllers
         [HttpPost("login")]
         public IActionResult Login(LoginViewModel loginUser)
         {
-            var user = userService.GetByName(loginUser);
+             var user = userService.GetByName(loginUser);
             if(user.IsSuccess)
             { 
                 user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(loginUser.Password);

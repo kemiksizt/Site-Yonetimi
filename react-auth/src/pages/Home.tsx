@@ -1,21 +1,12 @@
-import React, {useEffect} from "react";
+import React from "react";
 
-const Home = () => {
+const Home = (props: {name:string}) => {
 
-    useEffect( () =>{
-        (
-            async() => {
-                await fetch('https://localhost:44377/user', {
-                    headers: {'Content-Type': 'application/json'},
-                    credentials : 'include'
-                }); 
-            }
-        )()
-    });
+    
 
     return(
         <div>
-            Home
+            {props.name ? "Hi " + props.name : "You are not logged in " }
         </div>
     );
 };

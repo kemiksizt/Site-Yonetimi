@@ -21,7 +21,7 @@ namespace Kemiksiz.DB.Entities
         public string Phone { get; set; }
         public int ApartmentId { get; set; }
         public string PlateNo { get; set; }
-        public bool IsActive { get; set; }
+        public bool? IsActive { get; set; }
         public bool IsDelete { get; set; }
         public DateTime Idate { get; set; }
         public DateTime? Udate { get; set; }

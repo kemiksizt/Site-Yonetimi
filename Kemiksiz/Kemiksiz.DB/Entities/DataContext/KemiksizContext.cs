@@ -9,6 +9,7 @@ namespace Kemiksiz.DB.Entities.DataContext
 {
     public partial class KemiksizContext : DbContext
     {
+        // Scaffold-DbContext "Server=.;Database=Kemiksiz;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -Contextdir Entities/DataContext -Context KemiksizContext -Project Kemiksiz.DB -StartUpProject Kemiksiz.DB -NoPluralize -Force
         public KemiksizContext()
         {
         }
@@ -59,11 +60,6 @@ namespace Kemiksiz.DB.Entities.DataContext
 
                 entity.Property(e => e.Price).HasColumnType("decimal(18, 2)");
 
-                entity.Property(e => e.Udate)
-                    .HasColumnType("datetime")
-                    .HasColumnName("UDate")
-                    .HasDefaultValueSql("(getdate())");
-
                 entity.HasOne(d => d.Apartment)
                     .WithMany(p => p.Bill)
                     .HasForeignKey(d => d.ApartmentId)
@@ -98,7 +94,7 @@ namespace Kemiksiz.DB.Entities.DataContext
 
                 entity.Property(e => e.Password)
                     .IsRequired()
-                    .HasMaxLength(20);
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Phone)
                     .IsRequired()

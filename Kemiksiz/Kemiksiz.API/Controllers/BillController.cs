@@ -18,7 +18,7 @@ namespace Kemiksiz.API.Controllers
         }
 
         [HttpGet]
-        public General<BillViewModel> GetUsers()
+        public General<BillViewModel> GetBills()
         {
             return billService.GetBills();
         }

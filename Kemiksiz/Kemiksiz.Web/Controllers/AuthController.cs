@@ -75,7 +75,7 @@ namespace Kemiksiz.Web.Controllers
         }
 
         [HttpGet("user")]
-        public IActionResult User()
+        public IActionResult Userr()
         {
 
             try
@@ -104,7 +104,12 @@ namespace Kemiksiz.Web.Controllers
         [HttpPost("logout")]
         public IActionResult Logout()
         {
-            Response.Cookies.Delete("jwt");
+            Response.Cookies.Delete("jwt", new CookieOptions
+            {
+                SameSite = SameSiteMode.None,
+                    Secure = true,
+                    HttpOnly = true
+            }); 
 
             return Ok(new
             {

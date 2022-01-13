@@ -56,8 +56,10 @@ namespace Kemiksiz.Web.Controllers
 
                 Response.Cookies.Append("jwt", jwt, new CookieOptions
                 {
+                    SameSite = SameSiteMode.None,
+                    Secure = true,
                     HttpOnly = true
-                });
+                }); ;
 
                 return Ok(new
                 {

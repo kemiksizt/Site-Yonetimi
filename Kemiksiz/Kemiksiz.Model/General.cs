@@ -14,5 +14,6 @@ namespace Kemiksiz.Model
         public string ExceptionMessage { get; set; }
         public string Message { get; set; }
         public string Token { get; set; }
+        public int Count { get; set; }
     }
 }

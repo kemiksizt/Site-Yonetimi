@@ -32,6 +32,7 @@ namespace Kemiksiz.Service
                     result.List = mapper.Map<List<ApartmentViewModel>>(data);
                     result.IsSuccess = true;
                     result.Message = "Daire listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
                 }
 
                 else

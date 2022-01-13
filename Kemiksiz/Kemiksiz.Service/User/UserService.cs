@@ -47,6 +47,7 @@ namespace Kemiksiz.Service.User
                     result.List = mapper.Map<List<UserViewModel>>(data);
                     result.IsSuccess = true;
                     result.Message = "Kullanıcı listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
                 }
 
                 else

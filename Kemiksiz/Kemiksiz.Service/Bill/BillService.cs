@@ -34,6 +34,7 @@ namespace Kemiksiz.Service.Bill
                     result.List = mapper.Map<List<BillViewModel>>(data);
                     result.IsSuccess = true;
                     result.Message = "Fatura listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
                 }
 
                 else

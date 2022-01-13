@@ -12,6 +12,7 @@ namespace Kemiksiz.Model.Bill
         public string BillType { get; set; }
         public decimal Price { get; set; }
         public int UserId { get; set; }
+        public int Month { get; set; }
         public int ApartmentId { get; set; }
         public bool IsPaid { get; set; }
     }

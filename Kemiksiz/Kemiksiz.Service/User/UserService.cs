@@ -142,6 +142,7 @@ namespace Kemiksiz.Service.User
                     {
                         data.Password = CreatePassword(8);
                         data.Idate = DateTime.Now;
+                        data.IsActive = true;
                         context.User.Add(data);
                         context.SaveChanges();
 

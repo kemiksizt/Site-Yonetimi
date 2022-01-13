@@ -58,7 +58,8 @@ namespace Kemiksiz.Service.Bill
                     var data = mapper.Map<Kemiksiz.DB.Entities.Bill>(newBill);
                     var isThere = context.Bill.Where(x => x.ApartmentId == newBill.ApartmentId &&
                                                           x.UserId == newBill.UserId &&
-                                                          x.BillType == newBill.BillType);
+                                                          x.BillType == newBill.BillType &&
+                                                          x.Month == newBill.Month);
 
                     if (isThere.Any())
                     {

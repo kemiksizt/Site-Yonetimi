@@ -46,5 +46,11 @@ namespace Kemiksiz.API.Controllers
         {
             return billService.Delete(id);
         }
+
+        [HttpPost("assign")]
+        public General<BillViewModel> AssignBill(int price, string type, int month)
+        {
+            return billService.AssignBill(price, type, month);
+        }
     }
 }

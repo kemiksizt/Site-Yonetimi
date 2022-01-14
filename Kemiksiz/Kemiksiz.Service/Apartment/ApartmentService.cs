@@ -24,12 +24,12 @@ namespace Kemiksiz.Service
 
             using (var context = new KemiksizContext())
             {
-                var data = context.Apartment.OrderBy(a => a.Id).ThenBy(a => a.IsFull);
+                var dataList = context.Apartment.Where(x => x.IsFull).OrderBy(a => a.Id).ThenBy(a => a.IsFull);
             
 
-                if(data.Any())
+                if(dataList.Any())
                 {
-                    result.List = mapper.Map<List<ApartmentViewModel>>(data);
+                    result.List = mapper.Map<List<ApartmentViewModel>>(dataList);
                     result.IsSuccess = true;
                     result.Message = "Daire listeleme işlemi başarılı!";
                     result.Count = result.List.Count;
@@ -37,7 +37,7 @@ namespace Kemiksiz.Service
 
                 else
                 {
-                    result.ExceptionMessage = "Sistemde hiçbir daire yok!";
+                    result.ExceptionMessage = "Sistemde dolu hiçbir daire yok!";
                 }
 
             }

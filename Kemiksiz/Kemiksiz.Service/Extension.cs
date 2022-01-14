@@ -19,5 +19,10 @@ namespace Kemiksiz.Service
             }
             return res.ToString();
         }
+
+        public static decimal CalculatePrice(decimal price, int userCount)
+        {
+            return price / userCount;
+        }
     }
 }

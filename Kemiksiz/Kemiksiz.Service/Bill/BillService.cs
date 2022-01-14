@@ -13,10 +13,12 @@ namespace Kemiksiz.Service.Bill
     public class BillService : IBillService
     {
         private readonly IMapper mapper;
+        private readonly IApartmentService apartmentService;
 
-        public BillService(IMapper _mapper)
+        public BillService(IMapper _mapper, IApartmentService _apartmentService)
         {
             mapper = _mapper;
+            apartmentService = _apartmentService;
         }
 
         public General<BillViewModel> GetPaidBills()
@@ -176,5 +178,42 @@ namespace Kemiksiz.Service.Bill
 
             return result;
         }
+
+        public General<BillViewModel> AssignBill(int price, string type, int month)
+        {
+            var result = new General<BillViewModel>();
+
+                using (var context = new KemiksizContext())
+                {
+
+                    var userCount = apartmentService.GetApartments().Count;
+
+                    var calculate = Extension.CalculatePrice(price, userCount);
+
+                    if (calculate > 0 && userCount > 0)
+                    {
+                        var billList = context.Bill.Where(x => !x.IsDeleted && x.BillType == type && x.Month == month);
+
+                        foreach (var item in billList)
+                            item.Price = calculate;
+                       
+                        context.SaveChanges();
+
+                    result.Message = type + " faturası atama işlemi başarılı!";
+                    }
+
+                    else
+                    {
+                        result.ExceptionMessage = "İşlem başarısız, lütfen değerleri kontrol edin!";
+                    }
+
+                }
+
+            return result;
+
+        }
+        
+
+
     }
 }

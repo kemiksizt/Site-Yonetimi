@@ -1,7 +1,9 @@
 using AutoMapper;
 using Kemiksiz.API.Infrastructure;
+using Kemiksiz.DB;
 using Kemiksiz.Service;
 using Kemiksiz.Service.Bill;
+using Kemiksiz.Service.Card;
 using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -33,6 +35,8 @@ namespace Kemiksiz.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<CardDbConfig>(Configuration);
+
 
             // Mapper tanýmlamasý
             var _mappingProfile = new MapperConfiguration(mp => { mp.AddProfile(new MappingProfile()); });
@@ -42,10 +46,12 @@ namespace Kemiksiz.Web
 
             services.AddSingleton(mapper);
 
+            services.AddTransient<IDbClient, DbClient>();
             services.AddTransient<IApartmentService, ApartmentService>();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IBillService, BillService>();
             services.AddTransient<IJwtService, JwtService>();
+            services.AddTransient<ICardService, CardService>();
 
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie();

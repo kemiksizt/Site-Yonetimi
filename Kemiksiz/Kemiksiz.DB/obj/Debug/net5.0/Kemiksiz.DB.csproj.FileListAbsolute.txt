@@ -28,3 +28,6 @@ C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\ref\Kemiksiz.DB.dll
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.pdb
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.genruntimeconfig.cache
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.Model.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\bin\Debug\net5.0\Kemiksiz.Model.pdb
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.DB\obj\Debug\net5.0\Kemiksiz.DB.csproj.CopyComplete

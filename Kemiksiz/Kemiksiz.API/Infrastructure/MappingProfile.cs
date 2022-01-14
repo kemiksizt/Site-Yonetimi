@@ -41,6 +41,7 @@ namespace Kemiksiz.API.Infrastructure
 
             CreateMap<UpdateBillViewModel, Bill>();
             CreateMap<Bill, UpdateBillViewModel>();
+
                 
         }
     }

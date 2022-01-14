@@ -108,7 +108,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Model\\Kemiksiz.Model.csproj": {
+                "projectPath": "C:\\Users\\Turab\\Documents\\GitHub\\Site-Yonetimi\\Site-Yonetimi\\Kemiksiz\\Kemiksiz.Model\\Kemiksiz.Model.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -134,6 +138,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.6, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
             }
           },
           "imports": [
@@ -190,6 +198,12 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,5 +1,7 @@
 ﻿using Kemiksiz.Model;
+using Kemiksiz.Model.Card;
 using Kemiksiz.Model.User;
+using Kemiksiz.Service.Card;
 using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Http;
@@ -14,11 +16,13 @@ namespace Kemiksiz.Web.Controllers
     {
         private readonly IUserService userService;
         private readonly IJwtService jwtService;
+        private readonly ICardService cardService;
 
-        public AuthController(IUserService _userService, IJwtService _jwtService)
+        public AuthController(IUserService _userService, IJwtService _jwtService, ICardService _cardServices)
         {
             userService = _userService;
             jwtService = _jwtService;
+            cardService = _cardServices;
         }
 
         [HttpPost("register")]
@@ -116,6 +120,8 @@ namespace Kemiksiz.Web.Controllers
                 message = "success"
             });
         }
+
+        
 
     }
 }

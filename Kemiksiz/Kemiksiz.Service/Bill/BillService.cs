@@ -276,5 +276,41 @@ namespace Kemiksiz.Service.Bill
             return result;
         }
 
+
+        public General<BillViewModel> PayTotalBill(int id, string type)
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var billList = context.Bill.Where(x => x.UserId == id && x.BillType == type && !x.IsPaid);
+
+                decimal totalUnPaid = 0;
+
+                foreach (var item in billList)
+                {
+                    totalUnPaid += item.Price;
+                
+
+                    if(totalUnPaid == 0)
+                    {
+                        result.ExceptionMessage = "Hiç borcunuz yok!";
+                    }
+
+                    else
+                    {
+                        item.IsPaid = true;
+                        result.Message = "Toplu ödeme başarılı!";
+                        result.IsSuccess = true;
+                    }
+
+                }
+
+                context.SaveChanges();
+
+            }
+
+            return result;
+        }
     }
 }

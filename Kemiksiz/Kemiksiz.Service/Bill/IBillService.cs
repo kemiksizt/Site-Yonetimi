@@ -17,5 +17,6 @@ namespace Kemiksiz.Service.Bill
         public General<BillViewModel> Delete(int id);
         public General<BillViewModel> AssignBill(int price, string type, int month);
         public General<BillViewModel> AssignDues(decimal price, string type);
+        public General<BillViewModel> PayTotalBill(int id, string type);
     }
 }

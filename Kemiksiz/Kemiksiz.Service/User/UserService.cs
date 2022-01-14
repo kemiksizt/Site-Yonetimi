@@ -22,17 +22,7 @@ namespace Kemiksiz.Service.User
             jwtService = _jwtService;
         }
 
-        string CreatePassword(int length)
-        {
-            const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < length--)
-            {
-                res.Append(valid[rnd.Next(valid.Length)]);
-            }
-            return res.ToString();
-        }
+        
 
         public General<UserViewModel> GetUsers()
         {
@@ -141,7 +131,7 @@ namespace Kemiksiz.Service.User
 
                     else
                     {
-                        data.Password = CreatePassword(8);
+                        data.Password = Extension.CreatePassword(8);
                         data.Idate = DateTime.Now;
                         data.IsActive = true;
                         context.User.Add(data);

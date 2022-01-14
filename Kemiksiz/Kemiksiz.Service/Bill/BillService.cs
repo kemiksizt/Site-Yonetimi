@@ -284,7 +284,7 @@ namespace Kemiksiz.Service.Bill
         }
 
 
-        public General<BillViewModel> PayTotalBill(int id, string type)
+        public General<BillViewModel> PayTotalBill(int id, string type, long cardNumber)
         {
             var result = new General<BillViewModel>();
 
@@ -301,17 +301,17 @@ namespace Kemiksiz.Service.Bill
                     totalUnPaid += item.Price;
                 
 
-                    if(totalUnPaid == 0 && card.UserId != id)
-                    {
-                        result.ExceptionMessage = "Hiç borcunuz yok!";
-                    }
-
-                    else
+                    if(totalUnPaid > 0 && card.UserId == id && card.CardNumber == cardNumber)
                     {
                         card.PaidAmount += totalUnPaid;
                         item.IsPaid = true;
                         result.Message = "Toplu ödeme başarılı!";
                         result.IsSuccess = true;
+                    }
+
+                    else
+                    {
+                        result.ExceptionMessage = "Ödeme başarısız, lütfen bilgileri kontrol edin!";
                     }
 
                 }
@@ -324,7 +324,7 @@ namespace Kemiksiz.Service.Bill
             return result;
         }
 
-        public General<BillViewModel> PayBill(int id, string type, int month)
+        public General<BillViewModel> PayBill(int id, string type, int month, long cardNumber)
         {
             var result = new General<BillViewModel>();
 
@@ -334,7 +334,7 @@ namespace Kemiksiz.Service.Bill
             {
                 var bill = context.Bill.FirstOrDefault(x => x.UserId == id && x.BillType == type && x.Month == month);
 
-                if(bill is not null && !bill.IsPaid && bill.UserId == card.UserId)
+                if(bill is not null && !bill.IsPaid && bill.UserId == card.UserId && card.CardNumber == cardNumber)
                 {
                     card.PaidAmount += bill.Price;
                     bill.IsPaid = true;

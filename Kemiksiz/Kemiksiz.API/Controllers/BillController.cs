@@ -17,10 +17,16 @@ namespace Kemiksiz.API.Controllers
             billService = _billService;
         }
 
-        [HttpGet]
-        public General<BillViewModel> GetBills()
+        [HttpGet("paid")]
+        public General<BillViewModel> GetPaidBills()
         {
-            return billService.GetBills();
+            return billService.GetPaidBills();
+        }
+
+        [HttpGet("unpaid")]
+        public General<BillViewModel> GetUnPaidBills()
+        {
+            return billService.GetUnPaidBills();
         }
 
         [HttpPost]

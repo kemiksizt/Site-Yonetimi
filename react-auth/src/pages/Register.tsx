@@ -1,11 +1,11 @@
 import React, { SyntheticEvent, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 
 const Register = () => {
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [navigate, setNavigate] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -19,11 +19,11 @@ const Register = () => {
             })
         }); 
 
-        setNavigate(true);
+        setRedirect(true);
     }
 
-    if(navigate){
-        return <Navigate to="/login" />;
+    if(redirect){
+        return <Redirect to="/login" />;
 
     }   
 

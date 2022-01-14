@@ -19,19 +19,19 @@ namespace Kemiksiz.Service.Bill
             mapper = _mapper;
         }
 
-        public General<BillViewModel> GetBills()
+        public General<BillViewModel> GetPaidBills()
         {
             var result = new General<BillViewModel>();
 
             using (var context = new KemiksizContext())
             {
-                var data = context.Bill.OrderBy(a => a.Id).ThenBy(a => a.UserId)
+                var dataList = context.Bill.Where(x => x.IsPaid && !x.IsDeleted).OrderBy(a => a.Id).ThenBy(a => a.UserId)
                                         .ThenBy(a => a.ApartmentId).ThenBy(a => a.BillType);
 
 
-                if (data.Any())
+                if (dataList.Any())
                 {
-                    result.List = mapper.Map<List<BillViewModel>>(data);
+                    result.List = mapper.Map<List<BillViewModel>>(dataList);
                     result.IsSuccess = true;
                     result.Message = "Fatura listeleme işlemi başarılı!";
                     result.Count = result.List.Count;
@@ -39,7 +39,35 @@ namespace Kemiksiz.Service.Bill
 
                 else
                 {
-                    result.ExceptionMessage = "Sistemde hiçbir fatura yok!";
+                    result.ExceptionMessage = "Sistemde ödenmiş hiçbir fatura yok!";
+                }
+
+            }
+
+            return result;
+        }
+
+        public General<BillViewModel> GetUnPaidBills()
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var dataList = context.Bill.Where(x => !x.IsPaid && !x.IsDeleted).OrderBy(a => a.Id).ThenBy(a => a.UserId)
+                                        .ThenBy(a => a.ApartmentId).ThenBy(a => a.BillType);
+
+
+                if (dataList.Any())
+                {
+                    result.List = mapper.Map<List<BillViewModel>>(dataList);
+                    result.IsSuccess = true;
+                    result.Message = "Fatura listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Sistemde ödenmemiş hiçbir fatura yok!";
                 }
 
             }

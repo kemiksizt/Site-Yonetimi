@@ -1,11 +1,11 @@
 import React, {SyntheticEvent, useState} from 'react';
-import { Navigate } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const Login = (props: {setName: (name:string) => void}) => {
 
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const [navigate, setNavigate] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
@@ -22,13 +22,13 @@ const Login = (props: {setName: (name:string) => void}) => {
 
         const content = await response.json();
 
-        setNavigate(true);
+        setRedirect(true);
         props.setName(content.name);
 
     }
 
-    if(navigate){
-        return <Navigate to = "/" />;
+    if(redirect){
+        return <Redirect to = "/" />;
     }
 
     return (

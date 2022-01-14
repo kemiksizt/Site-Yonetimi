@@ -1,6 +1,8 @@
 ﻿using Kemiksiz.Model;
+using Kemiksiz.Model.Bill;
 using Kemiksiz.Model.Card;
 using Kemiksiz.Model.User;
+using Kemiksiz.Service.Bill;
 using Kemiksiz.Service.Card;
 using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
@@ -17,12 +19,15 @@ namespace Kemiksiz.Web.Controllers
         private readonly IUserService userService;
         private readonly IJwtService jwtService;
         private readonly ICardService cardService;
+        private readonly IBillService billService;
 
-        public AuthController(IUserService _userService, IJwtService _jwtService, ICardService _cardServices)
+        public AuthController(IUserService _userService, IJwtService _jwtService,
+                              ICardService _cardService, IBillService _billService)
         {
             userService = _userService;
             jwtService = _jwtService;
-            cardService = _cardServices;
+            cardService = _cardService;
+            billService = _billService;
         }
 
         [HttpPost("register")]
@@ -36,8 +41,6 @@ namespace Kemiksiz.Web.Controllers
             }
 
             return Unauthorized();
-
-
             
         }
 
@@ -79,7 +82,7 @@ namespace Kemiksiz.Web.Controllers
         }
 
         [HttpGet("user")]
-        public IActionResult Userr()
+        public IActionResult UserCookie()
         {
 
             try
@@ -121,7 +124,6 @@ namespace Kemiksiz.Web.Controllers
             });
         }
 
-        
 
     }
 }

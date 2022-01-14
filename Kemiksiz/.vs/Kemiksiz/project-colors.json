@@ -25,6 +25,11 @@
       "ProjectGuid": "0da732db-4b10-4ca1-b5b0-e15d384f6192",
       "DisplayName": "Kemiksiz.Web",
       "ColorIndex": 4
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
     }
   },
   "NextColorIndex": 5

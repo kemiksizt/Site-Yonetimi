@@ -323,5 +323,38 @@ namespace Kemiksiz.Service.Bill
 
             return result;
         }
+
+        public General<BillViewModel> PayBill(int id, string type, int month)
+        {
+            var result = new General<BillViewModel>();
+
+            var card = cardService.GetCardByUserId(id);
+
+            using (var context = new KemiksizContext())
+            {
+                var bill = context.Bill.FirstOrDefault(x => x.UserId == id && x.BillType == type && x.Month == month);
+
+                if(bill is not null && !bill.IsPaid && bill.UserId == card.UserId)
+                {
+                    card.PaidAmount += bill.Price;
+                    bill.IsPaid = true;
+
+                    result.IsSuccess = true;
+                    result.Message = bill.BillType + " ödeme işleminiz başarılı!";
+
+                    context.SaveChanges();
+                    cardService.UpdateCard(card);
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Ödeme başarısız, lütfen bilgileri kontrol edin!";
+                }
+
+            }
+
+            return result;
+        }
+
     }
 }

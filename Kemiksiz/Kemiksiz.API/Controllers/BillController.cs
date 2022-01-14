@@ -64,5 +64,11 @@ namespace Kemiksiz.API.Controllers
         {
             return billService.PayTotalBill(id, type);
         }
+
+        [HttpPost("paymentBill")]
+        public General<BillViewModel> PayBill(int id, string type, int month)
+        {
+            return billService.PayBill(id, type, month);
+        }
     }
 }

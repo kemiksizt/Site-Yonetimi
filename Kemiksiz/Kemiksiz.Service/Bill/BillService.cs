@@ -200,6 +200,7 @@ namespace Kemiksiz.Service.Bill
                         context.SaveChanges();
 
                     result.Message = type + " faturası atama işlemi başarılı!";
+                    result.IsSuccess = true;
                     }
 
                     else
@@ -212,8 +213,68 @@ namespace Kemiksiz.Service.Bill
             return result;
 
         }
-        
 
+        public General<BillViewModel> AssignDues(decimal price, string type)
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var apartmentList = apartmentService.GetApartments().List;
+                var userCount = apartmentList.Count;
+
+                
+
+                // Aylık ödenecek olan toplam aidat miktarı
+                price /=  12;
+
+                // Kişi başı ödenecek aylık aidat miktarı
+                var calculatePrice = Extension.CalculatePrice(price, userCount);
+
+                foreach (var item in apartmentList)
+                {
+
+                    var billList = context.Bill.Where(x => x.ApartmentId == item.Id && x.BillType == "dues");
+
+                    if(billList is not null)
+                    {
+                        foreach (var bill in billList)
+                        {
+                            if (item.ApartmentType == "3+1")
+                            {
+                                bill.Price = price;
+                            }
+
+                            else if (item.ApartmentType == "2+1")
+                            {
+                                bill.Price = price - 200;
+                            }
+
+                            else if (item.ApartmentType == "4+1")
+                            {
+                                bill.Price = price + 200;
+                            }
+
+                            else
+                            {
+                                result.ExceptionMessage = "Beklenmeyen bir hata oluştu!";
+                            }
+                        }
+                        context.SaveChanges();
+
+                        result.IsSuccess = true;
+                        result.Message = "Aidat atama işlemi başarılı!";
+                    }
+
+                    else
+                    {
+                        result.ExceptionMessage = "Fatura bilgisi bulunamadı!";
+                    }
+                }
+            }
+
+            return result;
+        }
 
     }
 }

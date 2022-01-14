@@ -15,6 +15,7 @@ namespace Kemiksiz.Service.Card
         CardViewModel GetCard(string id);
         public General<CardViewModel> DeleteCard(string id);
         CardViewModel UpdateCard(CardViewModel card);
+        CardViewModel GetCardByUserId(int id);
         
     }
 }

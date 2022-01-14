@@ -47,6 +47,12 @@ namespace Kemiksiz.API.Controllers
             return cardService.UpdateCard(card);
         }
 
+        [HttpGet("userId")]
+        public CardViewModel GetCardByUserId(int id)
+        {
+            return cardService.GetCardByUserId(id);
+        }
+
 
     }
 }

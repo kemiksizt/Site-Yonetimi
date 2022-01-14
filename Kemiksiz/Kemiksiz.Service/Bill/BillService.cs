@@ -2,6 +2,8 @@
 using Kemiksiz.DB.Entities.DataContext;
 using Kemiksiz.Model;
 using Kemiksiz.Model.Bill;
+using Kemiksiz.Service.Card;
+using Kemiksiz.Service.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,11 +16,16 @@ namespace Kemiksiz.Service.Bill
     {
         private readonly IMapper mapper;
         private readonly IApartmentService apartmentService;
+        private readonly ICardService cardService;
+        private readonly IUserService userService;
 
-        public BillService(IMapper _mapper, IApartmentService _apartmentService)
+        public BillService(IMapper _mapper, IApartmentService _apartmentService,
+                           ICardService _cardService, IUserService _userService)
         {
             mapper = _mapper;
             apartmentService = _apartmentService;
+            userService = _userService;
+            cardService = _cardService;
         }
 
         public General<BillViewModel> GetPaidBills()
@@ -281,6 +288,8 @@ namespace Kemiksiz.Service.Bill
         {
             var result = new General<BillViewModel>();
 
+            var card = cardService.GetCardByUserId(id);
+
             using (var context = new KemiksizContext())
             {
                 var billList = context.Bill.Where(x => x.UserId == id && x.BillType == type && !x.IsPaid);
@@ -292,13 +301,14 @@ namespace Kemiksiz.Service.Bill
                     totalUnPaid += item.Price;
                 
 
-                    if(totalUnPaid == 0)
+                    if(totalUnPaid == 0 && card.UserId != id)
                     {
                         result.ExceptionMessage = "Hiç borcunuz yok!";
                     }
 
                     else
                     {
+                        card.PaidAmount += totalUnPaid;
                         item.IsPaid = true;
                         result.Message = "Toplu ödeme başarılı!";
                         result.IsSuccess = true;
@@ -307,6 +317,7 @@ namespace Kemiksiz.Service.Bill
                 }
 
                 context.SaveChanges();
+                cardService.UpdateCard(card);
 
             }
 

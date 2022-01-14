@@ -57,6 +57,14 @@ namespace Kemiksiz.Service.Card
             return card;
         }
 
+        public CardViewModel GetCardByUserId(int id)
+        {
+            var cardList = GetCards();
+
+            return _cards.Find(card => card.UserId == id).First();
+
+        }
+
 
 
     }

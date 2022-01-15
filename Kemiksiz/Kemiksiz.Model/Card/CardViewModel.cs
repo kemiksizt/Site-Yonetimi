@@ -12,7 +12,7 @@ namespace Kemiksiz.Model.Card
         [BsonId]
         [BsonRepresentation(MongoDB.Bson.BsonType.ObjectId)]
         public string Id { get; set; }
-        public long CardNumber { get; set; }
+        public string CardNumber { get; set; }
         public int CVV { get; set; }
         public int UserId { get; set; }
         public decimal PaidAmount { get; set; }

@@ -119,7 +119,7 @@ namespace Kemiksiz.Service.Bill
 
                     result.ExceptionMessage = "Beklenmeyen bir hata oluştu, lütfen daire ve user Id lerini kontrol edin!";
                 }
-                
+
 
             }
 
@@ -140,7 +140,7 @@ namespace Kemiksiz.Service.Bill
                     bill.BillType = updatedBill.BillType;
                     bill.Price = updatedBill.Price;
                     bill.IsPaid = updatedBill.IsPaid;
-                    
+
 
                     context.SaveChanges();
 
@@ -190,32 +190,32 @@ namespace Kemiksiz.Service.Bill
         {
             var result = new General<BillViewModel>();
 
-                using (var context = new KemiksizContext())
+            using (var context = new KemiksizContext())
+            {
+
+                var userCount = apartmentService.GetApartments().Count;
+
+                var calculate = Extension.CalculatePrice(price, userCount);
+
+                if (calculate > 0 && userCount > 0)
                 {
+                    var billList = context.Bill.Where(x => !x.IsDeleted && x.BillType == type && x.Month == month);
 
-                    var userCount = apartmentService.GetApartments().Count;
+                    foreach (var item in billList)
+                        item.Price = calculate;
 
-                    var calculate = Extension.CalculatePrice(price, userCount);
-
-                    if (calculate > 0 && userCount > 0)
-                    {
-                        var billList = context.Bill.Where(x => !x.IsDeleted && x.BillType == type && x.Month == month);
-
-                        foreach (var item in billList)
-                            item.Price = calculate;
-                       
-                        context.SaveChanges();
+                    context.SaveChanges();
 
                     result.Message = type + " faturası atama işlemi başarılı!";
                     result.IsSuccess = true;
-                    }
-
-                    else
-                    {
-                        result.ExceptionMessage = "İşlem başarısız, lütfen değerleri kontrol edin!";
-                    }
-
                 }
+
+                else
+                {
+                    result.ExceptionMessage = "İşlem başarısız, lütfen değerleri kontrol edin!";
+                }
+
+            }
 
             return result;
 
@@ -230,10 +230,10 @@ namespace Kemiksiz.Service.Bill
                 var apartmentList = apartmentService.GetApartments().List;
                 var userCount = apartmentList.Count;
 
-                
+
 
                 // Aylık ödenecek olan toplam aidat miktarı
-                price /=  12;
+                price /= 12;
 
                 // Kişi başı ödenecek aylık aidat miktarı
                 var calculatePrice = Extension.CalculatePrice(price, userCount);
@@ -243,7 +243,7 @@ namespace Kemiksiz.Service.Bill
 
                     var billList = context.Bill.Where(x => x.ApartmentId == item.Id && x.BillType == "dues");
 
-                    if(billList is not null)
+                    if (billList is not null)
                     {
                         foreach (var bill in billList)
                         {
@@ -284,7 +284,7 @@ namespace Kemiksiz.Service.Bill
         }
 
 
-        public General<BillViewModel> PayTotalBill(int id, string type, long cardNumber)
+        public General<BillViewModel> PayTotalBill(int id, string type, string cardNumber)
         {
             var result = new General<BillViewModel>();
 
@@ -299,9 +299,9 @@ namespace Kemiksiz.Service.Bill
                 foreach (var item in billList)
                 {
                     totalUnPaid += item.Price;
-                
 
-                    if(totalUnPaid > 0 && card.UserId == id && card.CardNumber == cardNumber)
+
+                    if (totalUnPaid > 0 && card.UserId == id && card.CardNumber == cardNumber)
                     {
                         card.PaidAmount += totalUnPaid;
                         item.IsPaid = true;
@@ -324,7 +324,7 @@ namespace Kemiksiz.Service.Bill
             return result;
         }
 
-        public General<BillViewModel> PayBill(int id, string type, int month, long cardNumber)
+        public General<BillViewModel> PayBill(int id, string type, int month, string cardNumber)
         {
             var result = new General<BillViewModel>();
 
@@ -334,7 +334,7 @@ namespace Kemiksiz.Service.Bill
             {
                 var bill = context.Bill.FirstOrDefault(x => x.UserId == id && x.BillType == type && x.Month == month);
 
-                if(bill is not null && !bill.IsPaid && bill.UserId == card.UserId && card.CardNumber == cardNumber)
+                if (bill is not null && !bill.IsPaid && bill.UserId == card.UserId && card.CardNumber == cardNumber)
                 {
                     card.PaidAmount += bill.Price;
                     bill.IsPaid = true;

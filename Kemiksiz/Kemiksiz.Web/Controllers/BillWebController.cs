@@ -86,7 +86,7 @@ namespace Kemiksiz.Web.Controllers
 
 
         [HttpPost("paymentTotal")]
-        public IActionResult PayTotalBill(int id, string type, long cardNumber)
+        public IActionResult PayTotalBill(int id, string type, string cardNumber)
         {
             var payment = billService.PayTotalBill(id, type, cardNumber);
 
@@ -95,7 +95,7 @@ namespace Kemiksiz.Web.Controllers
 
 
         [HttpPost("paymentBill")]
-        public IActionResult PayBill(int id, string type, int month, long cardNumber)
+        public IActionResult PayBill(int id, string type, int month, string cardNumber)
         {
             var payment = billService.PayBill(id, type, month, cardNumber);
 

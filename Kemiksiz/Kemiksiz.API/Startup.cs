@@ -34,12 +34,13 @@ namespace Kemiksiz.API
         {
             services.Configure<CardDbConfig>(Configuration);
 
-            // Mapper tanýmlamasý
+            // Mapper tanýmlandý
             var _mappingProfile = new MapperConfiguration(mp => { mp.AddProfile(new MappingProfile()); });
             IMapper mapper = _mappingProfile.CreateMapper();
 
             services.AddSingleton(mapper);
 
+            // Servisler tanýmlandý
             services.AddTransient<IDbClient, DbClient>();
             services.AddTransient<IApartmentService, ApartmentService>();
             services.AddTransient<IUserService, UserService>();
@@ -47,6 +48,8 @@ namespace Kemiksiz.API
             services.AddTransient<IJwtService, JwtService>();
             services.AddTransient<ICardService, CardService>();
 
+            // Redis Cache tanýmlandý
+            services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:6379");
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

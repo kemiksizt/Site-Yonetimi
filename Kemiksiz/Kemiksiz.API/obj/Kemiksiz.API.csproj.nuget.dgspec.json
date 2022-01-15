@@ -58,6 +58,18 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "Hangfire.AspNetCore": {
+              "target": "Package",
+              "version": "[1.7.9, )"
+            },
+            "Hangfire.Core": {
+              "target": "Package",
+              "version": "[1.7.9, )"
+            },
+            "Hangfire.MemoryStorage": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
             "Microsoft.Extensions.Caching.StackExchangeRedis": {
               "target": "Package",
               "version": "[5.0.1, )"

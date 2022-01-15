@@ -1,9 +1,12 @@
 using AutoMapper;
+using Hangfire;
+using Hangfire.MemoryStorage;
 using Kemiksiz.API.Infrastructure;
 using Kemiksiz.DB;
 using Kemiksiz.Service;
 using Kemiksiz.Service.Bill;
 using Kemiksiz.Service.Card;
+using Kemiksiz.Service.Job;
 using Kemiksiz.Service.Jwt;
 using Kemiksiz.Service.User;
 using Microsoft.AspNetCore.Builder;
@@ -32,6 +35,15 @@ namespace Kemiksiz.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddHangfire(config =>
+            config.SetDataCompatibilityLevel(CompatibilityLevel.Version_170)
+            .UseSimpleAssemblyNameTypeSerializer()
+            .UseDefaultTypeSerializer()
+            .UseMemoryStorage());
+
+            services.AddHangfireServer();
+
             services.Configure<CardDbConfig>(Configuration);
 
             // Mapper tanýmlandý
@@ -47,6 +59,7 @@ namespace Kemiksiz.API
             services.AddTransient<IBillService, BillService>();
             services.AddTransient<IJwtService, JwtService>();
             services.AddTransient<ICardService, CardService>();
+            services.AddTransient<IJobService, JobService>();
 
             // Redis Cache tanýmlandý
             services.AddStackExchangeRedisCache(options => options.Configuration = "localhost:6379");

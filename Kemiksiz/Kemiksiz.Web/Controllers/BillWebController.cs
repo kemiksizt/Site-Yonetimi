@@ -77,9 +77,9 @@ namespace Kemiksiz.Web.Controllers
 
 
         [HttpPost("assignmentDue")]
-        public IActionResult AssignDues(decimal price, string type)
+        public IActionResult AssignDues(decimal price)
         {
-            var due = billService.AssignDues(price, type);
+            var due = billService.AssignDues(price);
 
             return Ok(due);
         }

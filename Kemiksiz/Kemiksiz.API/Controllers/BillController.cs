@@ -54,9 +54,9 @@ namespace Kemiksiz.API.Controllers
         }
 
         [HttpPost("assignmentDues")]
-        public General<BillViewModel> AssignDues(decimal price, string type)
+        public General<BillViewModel> AssignDues(decimal price)
         {
-            return billService.AssignDues(price, type);
+            return billService.AssignDues(price);
         }
 
         [HttpPost("paymentTotal")]

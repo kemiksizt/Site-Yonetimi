@@ -221,7 +221,7 @@ namespace Kemiksiz.Service.Bill
 
         }
 
-        public General<BillViewModel> AssignDues(decimal price, string type)
+        public General<BillViewModel> AssignDues(decimal price)
         {
             var result = new General<BillViewModel>();
 

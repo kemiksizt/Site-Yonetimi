@@ -34,7 +34,11 @@ Sitede bulunan daire, fatura ve kullanıcı bilgilerinin olduğu bir sistemin y�
     </li>
     <li>Kredi kartı ödemesi eğer kart numarası doğru ve kişiye özel ise ödeme kabul edilir.
     </li>
+    <li>Login sonrasında kullanıcının bilgileri token içerisine atıldı.
+    </li>
     <li>Web tarafında kullanılmak üzere giriş sonrası kullanıcı bilgisi Cookie ye eklendi.
+    </li>
+    <li>Kullanıcı belirlenen süreyi doldurmadan Logout yaparsa token bilgisi Cookie içerisinden silinir.
     </li>
     <li>Atama işlemleri için bazı matematiksel hesaplar Extension classının içerisinde yazıldı.
     </li>

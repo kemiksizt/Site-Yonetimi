@@ -26,6 +26,7 @@ namespace Kemiksiz.DB.Entities
         public DateTime Idate { get; set; }
         public DateTime? Udate { get; set; }
         public bool IsAdmin { get; set; }
+        public bool IsSendEmail { get; set; }
 
         public virtual Apartment Apartment { get; set; }
         public virtual ICollection<Bill> Bill { get; set; }

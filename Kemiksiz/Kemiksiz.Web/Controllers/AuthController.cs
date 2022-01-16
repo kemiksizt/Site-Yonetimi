@@ -60,6 +60,7 @@ namespace Kemiksiz.Web.Controllers
                 }
 
                 var jwt = jwtService.Generate(user.Entity.Id);
+                user.Token = jwt;
 
                 Response.Cookies.Append("jwt", jwt, new CookieOptions
                 {
@@ -70,8 +71,10 @@ namespace Kemiksiz.Web.Controllers
 
                 return Ok(new
                 {
-                    message = "success"
-                });
+                    message = "success",
+                    user.Entity,
+                    user.Token
+                }) ;
             }
 
             else
@@ -96,6 +99,8 @@ namespace Kemiksiz.Web.Controllers
                 var user = userService.GetById(userId);
 
                 user.Entity.Password = BCrypt.Net.BCrypt.HashPassword(user.Entity.Password);
+
+                user.Token = jwt;
 
                 return Ok(user);
             }

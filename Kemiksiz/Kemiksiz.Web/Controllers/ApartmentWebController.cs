@@ -24,6 +24,14 @@ namespace Kemiksiz.Web.Controllers
             return Ok(apartmentList);
         }
 
+        [HttpGet("EmptyApartment")]
+        public IActionResult GetEmptyApartments()
+        {
+            var apartmentList = apartmentService.GetEmptyApartments();
+
+            return Ok(apartmentList);
+        }
+
 
         [HttpPost("InsertApartment")]
         public IActionResult InsertApartment(InsertApartmentViewModel newApart)

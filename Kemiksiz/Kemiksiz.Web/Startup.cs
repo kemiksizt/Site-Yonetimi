@@ -37,6 +37,13 @@ namespace Kemiksiz.Web
         {
             services.Configure<CardDbConfig>(Configuration);
 
+            services.AddSession(option =>
+            {
+                //Süre 1 dk olarak belirlendi
+                option.IdleTimeout = TimeSpan.FromMinutes(10);
+            });
+            services.AddMvc();
+
 
             // Mapper tanýmlamasý
             var _mappingProfile = new MapperConfiguration(mp => { mp.AddProfile(new MappingProfile()); });

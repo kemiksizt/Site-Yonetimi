@@ -9,7 +9,6 @@ namespace Kemiksiz.DB.Entities.DataContext
 {
     public partial class KemiksizContext : DbContext
     {
-        // Scaffold-DbContext "Server=.;Database=Kemiksiz;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Entities -Contextdir Entities/DataContext -Context KemiksizContext -Project Kemiksiz.DB -StartUpProject Kemiksiz.DB -NoPluralize -Force
         public KemiksizContext()
         {
         }

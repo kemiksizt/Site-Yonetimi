@@ -22,7 +22,7 @@ namespace Kemiksiz.Service.Card
 
         public CardViewModel AddCard(CardViewModel card)
         {
-            card.CardNumber = Extension.EncodeBase64(card.CardNumber);
+            //card.CardNumber = Extension.EncodeBase64(card.CardNumber);
             _cards.InsertOne(card);
             return card;
         }
@@ -61,12 +61,18 @@ namespace Kemiksiz.Service.Card
         public CardViewModel GetCardByUserId(int id)
         {
             var cardList = GetCards();
+            foreach (var card in cardList)
+            {
+                if (card.UserId == id)
+                    return card;
+            }
+            //var card = _cards.Find(card => card.UserId == id).First();
 
-            var card = _cards.Find(card => card.UserId == id).First();
+            //card.CardNumber = Extension.DecodeBase64(card.CardNumber);
 
-            card.CardNumber = Extension.DecodeBase64(card.CardNumber);
+            //return card;
 
-            return card;
+            return cardList.FirstOrDefault();
 
         }
 

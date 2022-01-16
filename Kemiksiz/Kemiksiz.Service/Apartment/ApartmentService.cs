@@ -24,10 +24,37 @@ namespace Kemiksiz.Service
 
             using (var context = new KemiksizContext())
             {
-                var dataList = context.Apartment.Where(x => x.IsFull).OrderBy(a => a.Id).ThenBy(a => a.IsFull);
+                var dataList = context.Apartment.Where(x => x.IsFull).OrderBy(a => a.Id);
             
 
                 if(dataList.Any())
+                {
+                    result.List = mapper.Map<List<ApartmentViewModel>>(dataList);
+                    result.IsSuccess = true;
+                    result.Message = "Daire listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Sistemde dolu hiçbir daire yok!";
+                }
+
+            }
+
+            return result;
+        }
+
+        public General<ApartmentViewModel> GetEmptyApartments()
+        {
+            var result = new General<ApartmentViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var dataList = context.Apartment.Where(x => !x.IsFull).OrderBy(a => a.Id);
+
+
+                if (dataList.Any())
                 {
                     result.List = mapper.Map<List<ApartmentViewModel>>(dataList);
                     result.IsSuccess = true;

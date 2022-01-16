@@ -64,7 +64,6 @@ C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.We
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\Kemiksiz.Web.AssemblyInfoInputs.cache
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\Kemiksiz.Web.AssemblyInfo.cs
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\Kemiksiz.Web.csproj.CoreCompileInputs.cache
-C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\Kemiksiz.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\Kemiksiz.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\scopedcss\bundle\Kemiksiz.Web.styles.css
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\obj\Debug\net5.0\staticwebassets\Kemiksiz.Web.StaticWebAssets.Manifest.cache
@@ -103,3 +102,6 @@ C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.We
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\pt-BR\Hangfire.Core.resources.dll
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\zh-TW\Hangfire.Core.resources.dll
 C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\zh\Hangfire.Core.resources.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\MailKit.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\MimeKit.dll
+C:\Users\Turab\Documents\GitHub\Site-Yonetimi\Site-Yonetimi\Kemiksiz\Kemiksiz.Web\bin\Debug\net5.0\BouncyCastle.Crypto.dll

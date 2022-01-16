@@ -11,6 +11,7 @@ namespace Kemiksiz.Service
     public interface IApartmentService
     {
         public General<ApartmentViewModel> GetApartments();
+        public General<ApartmentViewModel> GetEmptyApartments();
         public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart);
         public General<ApartmentViewModel> Delete(int id);
         public General<ApartmentViewModel> Update(ApartmentViewModel updatedApart);

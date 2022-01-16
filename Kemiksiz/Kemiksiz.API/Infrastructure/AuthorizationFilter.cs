@@ -1,24 +1,30 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.Extensions.Caching.Distributed;
+﻿using Kemiksiz.Service.Jwt;
+using Kemiksiz.Service.User;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using System;
+using System.Net;
 
 namespace Kemiksiz.API.Infrastructure
 {
     public class AuthorizationFilter : Attribute, IActionFilter
     {
-        private readonly IDistributedCache distributedCache;
-        public AuthorizationFilter(IDistributedCache _distributedCache)
+        private readonly IUserService userService;
+        private readonly IJwtService jwtService;
+        public AuthorizationFilter(IUserService _userService, IJwtService _jwtService)
         {
-            distributedCache = _distributedCache;
+            userService = _userService;
+            jwtService = _jwtService;
         }
+        
         public void OnActionExecuted(ActionExecutedContext context)
         {
-            throw new NotImplementedException();
+            return;
         }
 
         public void OnActionExecuting(ActionExecutingContext context)
         {
-            throw new NotImplementedException();
         }
     }
 }

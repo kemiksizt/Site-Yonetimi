@@ -51,7 +51,7 @@ namespace Kemiksiz.Service
 
             using (var context = new KemiksizContext())
             {
-                var dataList = context.Apartment.Where(x => !x.IsFull).OrderBy(a => a.Id);
+                var dataList = context.Apartment.Where(x => !x.IsFull).OrderBy(a => a.Id).ThenBy(a => a.IsFull);
 
 
                 if (dataList.Any())
@@ -64,7 +64,7 @@ namespace Kemiksiz.Service
 
                 else
                 {
-                    result.ExceptionMessage = "Sistemde dolu hiçbir daire yok!";
+                    result.ExceptionMessage = "Sistemde bos hiçbir daire yok!";
                 }
 
             }
@@ -72,39 +72,66 @@ namespace Kemiksiz.Service
             return result;
         }
 
-        public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart)
-        {
-            var result = new General<InsertApartmentViewModel>();  
-
-            using (var context = new KemiksizContext())
+            public General<InsertApartmentViewModel> Insert(InsertApartmentViewModel newApart)
             {
-                var data = mapper.Map<Kemiksiz.DB.Entities.Apartment>(newApart);
-                var isThere = context.Apartment.Where(x => x.BlockName == newApart.BlockName &&
-                                                           x.ApartmentType == newApart.ApartmentType &&
-                                                           x.ApartmentNo == newApart.ApartmentNo &&
-                                                           x.ApartmentFloor == newApart.ApartmentFloor);
+                var result = new General<InsertApartmentViewModel>();  
 
-                if (isThere.Any())
+                using (var context = new KemiksizContext())
                 {
-                    result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir daire mevcut, lütfen kontrol ediniz!";
-                }
+                    var data = mapper.Map<Kemiksiz.DB.Entities.Apartment>(newApart);
+                    var isThere = context.Apartment.Where(x => x.BlockName == newApart.BlockName &&
+                                                               x.ApartmentType == newApart.ApartmentType &&
+                                                               x.ApartmentNo == newApart.ApartmentNo &&
+                                                               x.ApartmentFloor == newApart.ApartmentFloor);
 
-                else
-                {
-                    context.Apartment.Add(data);
-                    context.SaveChanges();
+                    if (isThere.Any())
+                    {
+                        result.ExceptionMessage = "Girdiğiniz bilgilerde zaten bir daire mevcut, lütfen kontrol ediniz!";
+                    }
 
-                    result.Entity = mapper.Map<InsertApartmentViewModel>(data);
-                    result.IsSuccess = true;
-                    result.Message = "Daire ekleme işlemi başarılı!";
-                }
+                    else
+                    {
+                        context.Apartment.Add(data);
+                        context.SaveChanges();
+
+                        result.Entity = mapper.Map<InsertApartmentViewModel>(data);
+                        result.IsSuccess = true;
+                        result.Message = "Daire ekleme işlemi başarılı!";
+                    }
  
             }
 
             return result;
         }
 
-        public General<ApartmentViewModel> Delete(int id)
+        public General<ApartmentViewModel> GetAllApartments()
+        {
+            var result = new General<ApartmentViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var dataList = context.Apartment.OrderBy(a => a.Id).ThenBy(a => a.IsFull);
+
+
+                if (dataList.Any())
+                {
+                    result.List = mapper.Map<List<ApartmentViewModel>>(dataList);
+                    result.IsSuccess = true;
+                    result.Message = "Daire listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Sistemde hiçbir daire yok!";
+                }
+
+            }
+
+            return result;
+        }
+
+            public General<ApartmentViewModel> Delete(int id)
         {
             var result = new General<ApartmentViewModel>();
 

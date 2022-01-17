@@ -28,6 +28,8 @@ namespace Kemiksiz.Model.User
         [StringLength(20, MinimumLength = 3, ErrorMessage = "Şifre 3 karakterden az olamaz.")]
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        [Required(ErrorMessage = "Apartment Id boş bırakılamaz.")]
+        public int ApartmentId { get; set; }
 
     }
 }

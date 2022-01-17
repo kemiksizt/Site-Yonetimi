@@ -10,6 +10,8 @@ namespace Kemiksiz.Service.Bill
 {
     public interface IBillService
     {
+        public General<BillViewModel> GetPaidBillsByUserId(int id);
+        public General<BillViewModel> GetUnPaidBillsByUserId(int id);
         public General<BillViewModel> GetPaidBills();
         public General<BillViewModel> GetUnPaidBills();
         public General<InsertBillViewModel> Insert(InsertBillViewModel newBill);

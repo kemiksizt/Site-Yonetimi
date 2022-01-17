@@ -21,6 +21,22 @@ namespace Kemiksiz.Web.Controllers
             billService = _billService;
         }
 
+        [HttpGet("paidBillByUserId")]
+        public IActionResult GetPaidBills(int id)
+        {
+            var billList = billService.GetPaidBillsByUserId(id);
+
+            return Ok(billList);
+        }
+
+        [HttpGet("unpaidBillByUserId")]
+        public IActionResult GetUnPaidBillsByUserId(int id)
+        {
+            var billList = billService.GetUnPaidBillsByUserId(id);
+
+            return Ok(billList);
+        }
+
         [HttpGet("paidBill")]
         public IActionResult GetPaidBills()
         {

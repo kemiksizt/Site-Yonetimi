@@ -44,7 +44,7 @@ Sitede bulunan daire, fatura ve kullanıcı bilgilerinin olduğu bir sistemin y�
     </li>
     <li>Kredi kartı harici bütün datalar Microsoft Sql Server içerisinde tutuldu.
     </li>
-    <li>Yeni gelen kullanıcıya hoşgeldin maili gönderilecek.
+    <li>Yeni gelen kullanıcıya hoşgeldin maili gönderilecek.(Hang Fire)
     </li>
 </ul>
 

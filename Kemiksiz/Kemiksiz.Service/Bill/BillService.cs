@@ -28,6 +28,62 @@ namespace Kemiksiz.Service.Bill
             cardService = _cardService;
         }
 
+        public General<BillViewModel> GetPaidBillsByUserId(int id)
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var dataList = context.Bill.Where(x => x.IsPaid && !x.IsDeleted && x.UserId == id).OrderBy(a => a.Id).ThenBy(a => a.UserId)
+                                        .ThenBy(a => a.ApartmentId).ThenBy(a => a.BillType);
+
+
+                if (dataList.Any())
+                {
+                    result.List = mapper.Map<List<BillViewModel>>(dataList);
+                    result.IsSuccess = true;
+                    result.Message = "Fatura listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Sistemde ödenmiş hiçbir fatura yok!";
+                }
+
+            }
+
+            return result;
+        }
+
+        public General<BillViewModel> GetUnPaidBillsByUserId(int id)
+        {
+            var result = new General<BillViewModel>();
+
+            using (var context = new KemiksizContext())
+            {
+                var dataList = context.Bill.Where(x => !x.IsPaid && !x.IsDeleted && x.UserId == id).OrderBy(a => a.Id).ThenBy(a => a.UserId)
+                    .ThenBy(a => a.ApartmentId).ThenBy(a => a.BillType);
+
+
+                if (dataList.Any())
+                {
+                    result.List = mapper.Map<List<BillViewModel>>(dataList);
+                    result.IsSuccess = true;
+                    result.Message = "Fatura listeleme işlemi başarılı!";
+                    result.Count = result.List.Count;
+                }
+
+                else
+                {
+                    result.ExceptionMessage = "Sistemde ödenmemiş hiçbir fatura yok!";
+                }
+
+            }
+
+            return result;
+        }
+
         public General<BillViewModel> GetPaidBills()
         {
             var result = new General<BillViewModel>();
@@ -106,6 +162,7 @@ namespace Kemiksiz.Service.Bill
 
                     else
                     {
+                        data.Idate = DateTime.Now;
                         context.Bill.Add(data);
                         context.SaveChanges();
 

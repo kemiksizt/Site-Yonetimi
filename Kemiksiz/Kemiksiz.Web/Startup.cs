@@ -85,7 +85,7 @@ namespace Kemiksiz.Web
             app.UseRouting();
 
             app.UseCors(options => options
-                .WithOrigins(new[] { "http://localhost:3000", "http://localhost:8080", "http://localhost:4200" })
+                .WithOrigins(new[] { "http://localhost:44377", "http://localhost:8080", "http://localhost:4200", "http://localhost:3000" })
                 .AllowAnyHeader()
                 .AllowAnyMethod()
                 .AllowCredentials()

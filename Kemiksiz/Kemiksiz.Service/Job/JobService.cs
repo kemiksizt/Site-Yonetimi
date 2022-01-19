@@ -46,7 +46,7 @@ namespace Kemiksiz.Service.Job
                         //client.Connect("smtp@gmail.com", 587, SecureSocketOptions.StartTls);
                         client.Connect("smtp.yandex.com", 465, true); //port a bağlanıyoruz
                         client.Authenticate("talhaekrem0@yandex.com", "njfqmehnzooebuum");
-                        client.Send(message); //mesajı gönderiyoruz
+                        //client.Send(message); //mesajı gönderiyoruz
                         client.Disconnect(true);
                     }
 

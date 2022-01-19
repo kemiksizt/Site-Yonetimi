@@ -68,3 +68,8 @@ Sitede bulunan daire, fatura ve kullanıcı bilgilerinin olduğu bir sistemin y�
     <li>Projeye extra mesaj özelliği eklenecek, şu anlık mail yoluyla bir etkileşim sağlanıyor.
     </li>
 </ul>
+
+<br>
+
+<img src="Kemiksiz.gif" >
+
